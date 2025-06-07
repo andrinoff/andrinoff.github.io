@@ -1,7 +1,9 @@
+// vite.config.js
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 
-// https://vite.dev/config/
+
 export default defineConfig({
+  base: '/', // replace with your repo name
   plugins: [svelte()],
 })
