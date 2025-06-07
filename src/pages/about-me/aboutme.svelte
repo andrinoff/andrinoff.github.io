@@ -41,10 +41,10 @@
 	}
 	.badge-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(150px, 2fr));
+	grid-template-columns: repeat(auto-fill, minmax(400px, 3fr));
 	gap: 10px;
 	padding: 20px;
-	max-width: 1000px;
+	max-width: 200px;
 }
 	#root {
 		display: flex;

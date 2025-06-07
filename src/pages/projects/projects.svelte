@@ -27,7 +27,7 @@
 			Name: "Currency Converter",
 			Description:
 				"A Telegram bot with multi-language support",
-			Image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e060bcaf74865f953fed5e88ae5f24020598d814_image.png",
+			Image: "https://www.investopedia.com/thmb/lSMOlzF853E72-0HDkH25mmAdOM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-848755326-48dd2711646247648c4faebc98715119.jpg",
 			Images: ["python", "sqlite", "telegram"],
 			Link: "https://github.com/andrinoff/TelegramCurrencyConverter",
 		},
