@@ -48,7 +48,7 @@
 		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/7b8b6bf02ed987b0e68ce5c2814ea408d666caf5_folder_code_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
 	/>
 	<LinkMob
-		link="https://github.com/RezHackXYZ"
+		link="https://github.com/andrinoff"
 		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/f202b6faccfd5cc46299b976c2635fee60b55aa0_github-mark-white.svg"
 	/>
 </div>
