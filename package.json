@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist -b master"
+    "deploy": "gh-pages -d dist -b prod"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
