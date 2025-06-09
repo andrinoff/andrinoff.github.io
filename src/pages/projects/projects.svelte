@@ -6,6 +6,7 @@
 			Image: "https://i.imgur.com/5zHfTeQ.png",
 			Images: ["Javascript", "svelte", "vite"],
 			Link: "https://andrinoff.github.io",
+			Type: "fullstack",
 		},
 		{
 			Name: "Work Progress",
@@ -14,6 +15,7 @@
 			Image: "https://github.com/work-progress/assets/raw/master/banners/banner-work-progress-white.png?raw=true",
 			Images: ["typescript", "nextdotjs", "tailwindcss"],
 			Link: "https://github.com/work-progress",
+			Type: "fullstack",
 		},
 		{
 			Name: "Anglobotik",
@@ -22,6 +24,7 @@
 			Image: "https://github.com/andrinoff/anglobotik/raw/main/docs/icon.jpg",
 			Images: ["python", "telegram", "openai"],
 			Link: "https://github.com/andrinoff/anglobotik",
+			Type: "backend",
 		},
 		{
 			Name: "Currency Converter",
@@ -30,7 +33,27 @@
 			Image: "https://www.investopedia.com/thmb/lSMOlzF853E72-0HDkH25mmAdOM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-848755326-48dd2711646247648c4faebc98715119.jpg",
 			Images: ["python", "sqlite", "telegram"],
 			Link: "https://github.com/andrinoff/TelegramCurrencyConverter",
+			Type: "backend",
 		},
+		{
+			Name: "Not So Boring Website",
+			Description:
+				"A simple website for a startup",
+			Image: "https://i.imgur.com/wT0prOF.png",
+			Images: ["svelte", "tailwindcss", "javascript"],
+			Link: "https://not-so-boring-startup.github.io",
+			Type: "fullstack",
+		},
+		{
+			Name: "Tbilisi Hack Club Website",
+			Description:
+				"A website for Tbilisi Hack Club",
+			Image: "https://i.imgur.com/bfV8QXt.png",
+			Images: ["svelte", "tailwindcss", ],
+			Link: "https://tbilisi.hackclub.com",
+			Type: "frontend",
+		},
+
 	];
 </script>
 
