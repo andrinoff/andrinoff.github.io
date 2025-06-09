@@ -55,33 +55,41 @@
 		},
 
 	];
+
+	// Get unique types
+	let types = [...new Set(Projects.map(p => p.Type))];
 </script>
 
 <div id="root">
 	<h1>My Projects</h1>
-	<div id="grid">
-		{#each Projects as Project}
-			<div class="project-card">
-				<h2>{Project.Name}</h2>
-				<p>{@html Project.Description}</p>
-				<div class="image-gallery">
-					{#each Project.Images as Image}
-						<img
-							class="gallery-image"
-							alt="Project Tech Stack"
-							src="https://cdn.simpleicons.org/{Image}/grey"
-						/>
-					{/each}
+	{#each types as type}
+		<h2 style="margin-top:2em">{type.charAt(0).toUpperCase() + type.slice(1)} Projects</h2>
+		<div id="grid">
+			{#each Projects.filter(p => p.Type === type) as Project}
+				<div class="project-card">
+					{#if Project.Name}
+						<h2>{Project.Name}</h2>
+					{/if}
+					<p>{@html Project.Description}</p>
+					<div class="image-gallery">
+						{#each Project.Images as Image}
+							<img
+								class="gallery-image"
+								alt="Project Tech Stack"
+								src="https://cdn.simpleicons.org/{Image}/grey"
+							/>
+						{/each}
+					</div>
+					<div class="image-cover">
+						<img class="main-image" src={Project.Image} alt="Project" />
+					</div>
+					<a href={Project.Link} target="_blank">
+						<button class="ViewProject">Open Project</button>
+					</a>
 				</div>
-				<div class ="image-cover">
-				<img class="main-image" src={Project.Image} alt="Project" />
-				</div>
-				<a href={Project.Link} target="_blank"
-					><button class="ViewProject"> Open Project </button></a
-				>
-			</div>
-		{/each}
-	</div>
+			{/each}
+		</div>
+	{/each}
 </div>
 
 <style>
