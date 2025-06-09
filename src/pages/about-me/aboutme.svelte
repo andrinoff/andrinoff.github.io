@@ -1,5 +1,8 @@
 <div id="root">
 	<h1>About Me</h1>
+
+	
+
 	<h2> Education:</h2>
 	<br />
 		<p>

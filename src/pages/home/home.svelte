@@ -5,7 +5,8 @@
 <div id="root">
 	<div>
 		<div id="text">
-			<h1 id="YoHeading">Drew Smirnoff</h1>
+			<img src = "https://i.imgur.com/NukZ770.jpeg" style="min-width: 200px; max-width: 200px; min-height: 200px; max-height: 200px; object-fit: cover; border-radius: 50%;" alt="Drew's Avatar" />
+			<h1 id="YoHeading">Drew (どりゅう)</h1>
 			<h5 id="boutMe">
 				Software engineer <br/> Based in Tbilisi<img
 					id="whitespace"

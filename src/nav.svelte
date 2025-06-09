@@ -4,7 +4,7 @@
 
 <div id="root">
 	<div id="me">
-		<h1 id="YoHeading">Drew Smirnoff</h1>
+		<h1 id="YoHeading">Drew (どりゅう)</h1>
 	</div>
 	<Links />
 </div>
