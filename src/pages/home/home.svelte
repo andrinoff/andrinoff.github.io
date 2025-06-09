@@ -6,6 +6,7 @@
 	<div>
 		<div id="text">
 			<img src = "https://avatars.githubusercontent.com/u/175145001?v=4" style="min-width: 200px; max-width: 200px; min-height: 200px; max-height: 200px; object-fit: cover; border-radius: 50%;" alt="Drew's Avatar" />
+			<div id  = "textContent">
 			<h1 id="YoHeading">Drew (どりゅう)</h1>
 			<h5 id="boutMe">
 				Software engineer <br/> Based in Tbilisi<img
@@ -14,6 +15,7 @@
 					alt="!"
 				/>
 			</h5>
+			</div>
 		</div>
 		<hr />
 		<div id="links"><Links /></div>
@@ -30,8 +32,16 @@
 
 	#text {
 		margin: 20px;
+		display: flex;
+		flex-direction: row;
 	}
 
+	#textContent {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-left: 20px;
+	}
 	#links {
 		width: fit-content;
 		margin: 20px;
