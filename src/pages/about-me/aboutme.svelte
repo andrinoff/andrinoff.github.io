@@ -26,11 +26,25 @@
 				<circle cx="10" cy="10" r="5" fill="white" />
 				</svg>	
             </div>
-            <div class=" bg-[#d4dbe2] h-2 grow"></div>
+            <div class="w-[1.5px] bg-[#d4dbe2] h-2 grow"></div>
             </div>
             <div class="flex flex-1 flex-col py-3">
             <p class="text-[#fff] text-base font-medium leading-normal">Freemoviesfull.cc Backend Engineer</p>
             <p class="text-[#5c738a] text-base font-normal leading-normal">2024-2025</p>
+            </div>
+			<div class="flex flex-col items-center gap-1">
+            <div class="w-[1.5px] bg-[#d4dbe2] h-2"></div>
+            <div class="text-[#101418]" data-icon="RocketLaunch" data-size="24px" data-weight="regular">
+                <svg width="20" height="20">
+				<circle cx="10" cy="10" r="5" fill="white" />
+				</svg>	
+            </div>
+			
+            <div class=" bg-[#d4dbe2] h-2 grow"></div>
+            </div>
+            <div class="flex flex-1 flex-col py-3">
+            <p class="text-[#fff] text-base font-medium leading-normal">Freelance Fullstack Engineer</p>
+            <p class="text-[#5c738a] text-base font-normal leading-normal">2022-presemt</p>
             </div>
         </div>
 		
