@@ -1,5 +1,5 @@
 <script>
-	import Link from "../../link.svelte";
+	import Link from "../link.svelte";
 </script>
 
 <div id="root">

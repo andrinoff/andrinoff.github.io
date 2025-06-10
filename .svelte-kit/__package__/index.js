@@ -1,1 +1,2 @@
-export { default as MyComponent } from '../app.svelte';
+"use strict";
+// Reexport your entry components here

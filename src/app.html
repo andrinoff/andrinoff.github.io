@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang='en' style='height: 100%;margin: 0;padding: 0;'>
-  <head>
+<html lang="en">
+	  <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
@@ -12,22 +12,38 @@
 <meta property="og:site_name" content="Drew Smirnoff">
 <meta property="og:description" content="Drew Smirnoff" />
 <meta property="og:title" content="Drew Smirnoff">
-
-
 <title>Drew Smirnoff</title>
 <link rel='icon' type='image/svg+xml' href='https://avatars.githubusercontent.com/u/175145001?v=4' />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body style='height: 100%;margin: 0;padding: 0;'>
-    <div id='app' style='height: 100%;'></div>
-    <script type='module'>import { mount } from 'svelte'
-      import App from './src/app.svelte'
-      
-      const app = mount(App, {
-        target: document.getElementById('app'),
-      })
-      
-      export default app
-      </script>
-  </body>
+
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div id = "root">%sveltekit.body%</div>
+		<style>
+	:root {
+		background-color: black;
+		color: white;
+	}
+
+	* {
+		font-family: "Funnel Display", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	#root {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+	}
+
+	#content {
+		flex: 1;
+	}
+</style>
+
+	</body>
 </html>

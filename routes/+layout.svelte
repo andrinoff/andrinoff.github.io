@@ -1,14 +1,13 @@
 <script>
-	import Links from "./links.svelte";
+	import Links from "../links.svelte";
 </script>
 
 <div id="root">
-	<div id="me">
-		<h1 id="YoHeading">Drew (どりゅう)</h1>
-	</div>
+
 	<Links />
 </div>
 <hr>
+<slot />
 
 <style>
 	#root {

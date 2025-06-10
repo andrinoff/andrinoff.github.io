@@ -18,7 +18,7 @@
 			</div>
 		</div>
 		<hr />
-		<div id="links"><Links /></div>
+		
 	</div>
 </div>
 
