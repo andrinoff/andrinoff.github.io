@@ -12,6 +12,7 @@ export default {
 			strict: true
 		}),
 		paths: {
+			base: ""
 		}
 	}
 }
