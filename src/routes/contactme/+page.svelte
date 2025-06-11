@@ -4,31 +4,31 @@
 
 <div id="root">
 	<div>
-		<div id="me">
+		<div id="me" class = "align-center flex-col text-center">
 			<h3 id="YoHeading">
 				Contact Me:
 			</h3>
 			<h6 id="boutMe">From Fastest to Slowest:</h6>
 		</div>
-		<div id="links">
+		<div id="links" class = "flex text-center justify-center">
 			<Link
 				link="https://linkedin.com/in/andrinoff"
-				text="LinkedIn"
+				text=""
 				logo="https://img.icons8.com/?size=100&id=447&format=png&color=FFFFFF"
 			/>
 			<Link
 				link="mailto:realandrinoff@gmail.com"
-				text="Email"
+				text=""
 				logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b9d8a2dc71ce904752fe9257ab095c12b8c66e71_forward_to_inbox_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
 			/>
 			<Link
 				link="https://t.me/andrinoff"
-				text="Telegram"
+				text=""
 				logo="https://cdn.simpleicons.org/telegram/white"
 			/>
 			<Link
 				link="https://instagram.com/andrinoff.dev"
-				text="Instagram"
+				text=""
 				logo="https://cdn.simpleicons.org/instagram/white"
 			/>
 		</div>
@@ -37,24 +37,20 @@
 
 <style>
 	#root {
-		display: flex;
+		/* display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		height: 100%;
-		margin: 0px;
+		margin: 0px; */
 	}
 
 	#me {
-		margin-bottom: 20px;
+		margin-bottom: 30px;
+
 	}
 	#links {
-		width: fit-content;
-		display: flex;
-		flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        
+
 		gap: 10px;
 	}
 
