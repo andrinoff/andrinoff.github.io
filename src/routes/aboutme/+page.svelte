@@ -1,12 +1,16 @@
+<script>
+	import Techstack from "./techstack.svelte";
+	</script>
+
 <div id="root">
-	<h2 class="text-2xl"> Education:</h2>
+	<h1 class="text-3xl md:text-4xl font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"> Education:</h1>
 	<br />
 		<p>
 			2024-2026: A-levels </p>
 		<p id ="lower"> CS, Math, Econ at Projector School.</p>
 		
-	<h2>Experience:</h2>
-	<div class="grid grid-cols-[40px_1fr] gap-x-2 px-4">
+	<h1 class="mt-50 text-3xl md:text-4xl font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Experience:</h1>
+	<div class="mt-20 grid grid-cols-[40px_1fr] gap-x-2 px-4">
             <div class="flex flex-col items-center gap-1 pt-3">
             <div class="text-[#101418]" data-icon="Buildings" data-size="24px" data-weight="regular">
                 <svg width="20" height="20">
@@ -47,7 +51,7 @@
             <p class="text-[#5c738a] text-base font-normal leading-normal">2022-presemt</p>
             </div>
         </div>
-		
+		<Techstack />
 		
 
 
@@ -55,6 +59,7 @@
 </div>
 
 <style>
+	@import "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css";
 	h2 {
 		font-style: bold;
 		color: aliceblue;
@@ -80,4 +85,3 @@
 	}
 
 </style>
-`
