@@ -1,5 +1,5 @@
 <script>
-	import Links from "./links.svelte";
+  import Link from "../link.svelte";
 </script>
 
 <div id="root">
@@ -7,7 +7,7 @@
 		<div id="text">
 			<img src = "https://avatars.githubusercontent.com/u/175145001?v=4" style="min-width: 200px; max-width: 200px; min-height: 200px; max-height: 200px; object-fit: cover; border-radius: 50%;" alt="Drew's Avatar" />
 			<div id  = "textContent">
-			<h1 id="YoHeading">Drew (どりゅう)</h1>
+			<h1 id="YoHeading" class = "md: text-1xl" >Drew <br /> (どりゅう)</h1>
 			<h5 id="boutMe">
 				Software engineer <br/> Based in Tbilisi<img
 					id="whitespace"
@@ -20,6 +20,34 @@
 		<hr />
 		
 	</div>
+	<div id="root">
+	<div>
+		<div id="me" class = "align-center flex-col text-center">
+		</div>
+		<div id="links" class = "flex text-center justify-center">
+			<Link
+				link="https://linkedin.com/in/andrinoff"
+				text="LinkedIn"
+				logo="https://img.icons8.com/?size=100&id=447&format=png&color=FFFFFF"
+			/>
+			<Link
+				link="mailto:realandrinoff@gmail.com"
+				text="Email"
+				logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b9d8a2dc71ce904752fe9257ab095c12b8c66e71_forward_to_inbox_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
+			/>
+			<Link
+				link="https://t.me/andrinoff"
+				text="Telegram"
+				logo="https://cdn.simpleicons.org/telegram/white"
+			/>
+			<Link
+				link="https://instagram.com/andrinoff.dev"
+				text="Instagram"
+				logo="https://cdn.simpleicons.org/instagram/white"
+			/>
+		</div>
+	</div>
+</div>
 </div>
 
 <style>

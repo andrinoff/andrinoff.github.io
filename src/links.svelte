@@ -14,11 +14,7 @@
 		text="About"
 		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/978be0e162f6aebd63c1237006f065030a90264e_person_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
 	/>
-	<Link
-		link="/contactme"
-		text="Contact"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/fc3f312e696ec561d201c3ffe0874df1e09e70f0_waving_hand_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
-	/>
+
 	<Link
 		link="/projects"
 		text="Projects"
@@ -38,10 +34,6 @@
 	<LinkMob
 		link="/aboutme"
 		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/978be0e162f6aebd63c1237006f065030a90264e_person_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
-	/>
-	<LinkMob
-		link="/contactme"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/fc3f312e696ec561d201c3ffe0874df1e09e70f0_waving_hand_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
 	/>
 	<LinkMob
 		link="/projects"
