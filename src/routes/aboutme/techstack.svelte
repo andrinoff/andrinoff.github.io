@@ -37,6 +37,15 @@
       Image: "sharp",
       Name: "C#",
     },
+    {
+      Image: "godotengine",
+      Name: "GDScript",
+    },
+    {
+      Image: "go",
+      Name: "Golang",
+    },
+
 
     
 
@@ -104,10 +113,11 @@
 
 <main class="flex flex-col items-center justify-center w-full  text-white font-sans p-4">
   <div class="w-full max-w-md mx-auto">
-    <h1 class="text-3xl md:text-4xl font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+    <h1 class="text-3xl md:text-4xl font-bold text-center mb-2">
       My tech Stack
     </h1>
-    
+    <br/>
+    <br/>
 
     <div
       class="scroller-container h-80 w-full border border-gray-700 rounded-lg overflow-hidden shadow-lg"
