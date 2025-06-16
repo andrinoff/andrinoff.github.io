@@ -5,7 +5,7 @@
 <div id="root">
 	<div>
 		<div id="text">
-			<img src = "https://avatars.githubusercontent.com/u/175145001?v=4" style="min-width: 200px; max-width: 200px; min-height: 200px; max-height: 200px; object-fit: cover; border-radius: 50%;" alt="Drew's Avatar" />
+			<img src = "https://tbilisi.hackclub.com/drew/avatar.png" style="min-width: 200px; max-width: 200px; min-height: 200px; max-height: 200px; object-fit: cover; border-radius: 50%;" alt="Drew's Avatar" />
 			<div id  = "textContent">
 			<h1 id="YoHeading" class = "md: text-1xl" >Drew <br /> (どりゅう)</h1>
 			<h5 id="boutMe">
