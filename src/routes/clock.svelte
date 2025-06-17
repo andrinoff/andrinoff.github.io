@@ -11,7 +11,7 @@
     const localTime = now.getTime();
     const localOffset = now.getTimezoneOffset() * 60000;
     const utc = localTime + localOffset;
-    const tbilisiOffset = 5 * 3600000; 
+    const tbilisiOffset = 7 * 3600000; 
     const tbilisiTime = new Date(utc + tbilisiOffset);
     return tbilisiTime;
   }
