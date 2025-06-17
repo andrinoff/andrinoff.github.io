@@ -48,6 +48,8 @@
 <style>
 	#yes {
 		display: flex;
+		text-align: center;
+		justify-content: space-evenly;
 	}
 
 	#no {

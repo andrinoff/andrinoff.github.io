@@ -1,5 +1,6 @@
 <script>
   import Link from "../link.svelte";
+  import Clock from "./clock.svelte";
 </script>
 
 <div id="root">
@@ -48,6 +49,7 @@
 		</div>
 	</div>
 </div>
+<Clock />
 </div>
 
 <style>
