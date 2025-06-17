@@ -32,7 +32,7 @@
 				logo="https://img.icons8.com/?size=100&id=447&format=png&color=FFFFFF"
 			/>
 			<Link
-				link="mailto:realandrinoff@gmail.com"
+				link="mailto:business@andrinoff.com"
 				text="Email"
 				logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b9d8a2dc71ce904752fe9257ab095c12b8c66e71_forward_to_inbox_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
 			/>
