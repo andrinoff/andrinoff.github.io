@@ -69,7 +69,6 @@
     padding: 40px 60px;
     border-radius: 25px;
     /* Create a layered shadow effect for depth */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(79, 209, 255, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
   }
 
@@ -81,7 +80,7 @@
     font-weight: 700;
     line-height: 1;
     /* Neon glow effect for the text */
-    text-shadow: 0 0 10px #4FD1FF, 0 0 20px #4FD1FF, 0 0 30px #4FD1FF;
+    
   }
   
   .time-part {
