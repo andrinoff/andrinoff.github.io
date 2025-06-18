@@ -59,44 +59,40 @@
   </div>
 </div>
 
-<!-- CSS styles for the clock -->
 <style>
   .clock-container {
-	margin-top: 20px;
+    margin-top: 20px;
     text-align: center;
     color: #fff;
     background: #14191f;
     padding: 40px 60px;
     border-radius: 25px;
-    /* Create a layered shadow effect for depth */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .clock-face {
     display: flex;
     align-items: baseline;
     justify-content: center;
-    font-size: 5rem; /* Large font for the time */
+    font-family: 'Orbitron', sans-serif; /* Moved font-family here to apply to all children */
+    font-size: 5rem;
     font-weight: 700;
     line-height: 1;
-    /* Neon glow effect for the text */
-    
   }
   
   .time-part {
-    min-width: 120px; /* Ensures the clock doesn't jiggle as numbers change */
+    min-width: 120px;
     text-align: center;
   }
 
   .separator {
     font-size: 4rem;
-    animation: blink 1s infinite; /* Blinking animation for the colon */
+    animation: blink 1s infinite;
     margin: 0 10px;
     position: relative;
-    top: -5px; /* Minor adjustment for better visual alignment */
+    top: -5px;
   }
 
-  /* Keyframe animation for the blinking effect */
   @keyframes blink {
     50% {
       opacity: 0;
@@ -108,7 +104,37 @@
     font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #ccc; /* Slightly dimmer color for the date */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* Subtle glow */
+    color: #ccc;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+
+  /* --- Styles for Mobile Devices --- */
+  @media (max-width: 600px) {
+    .clock-container {
+      /* Reduce padding for smaller screens */
+      padding: 25px 20px;
+      margin: 20px 15px; /* Add some horizontal margin */
+    }
+
+    .clock-face {
+      /* Decrease the main clock font size */
+      font-size: 3rem; 
+    }
+
+    .time-part {
+      /* Adjust min-width to fit the smaller font size */
+      min-width: 70px;
+    }
+
+    .separator {
+      /* Scale down the separator font size */
+      font-size: 2.5rem;
+      margin: 0 5px; /* Reduce space around separators */
+    }
+
+    .date-display {
+      /* Make the date font size slightly smaller */
+      font-size: 1rem;
+    }
   }
 </style>
