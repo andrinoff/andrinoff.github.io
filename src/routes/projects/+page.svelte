@@ -109,6 +109,7 @@
         flex-direction: column;
         margin: 0;
         align-items: center;
+        padding: 0 10px; /* Add some padding for small screens */
     }
     h2,
     p {
@@ -118,6 +119,7 @@
 
     p {
         color: #818181;
+        text-align: center;
     }
     #grid {
         display: grid;
@@ -189,5 +191,24 @@
     .ViewProject:hover {
         background-color: #333;
         transform: scale(1.05) rotateZ(-5deg);
+    }
+
+    /* --- Styles for Tablets --- */
+    @media (max-width: 1024px) {
+        #grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* --- Styles for Mobile Phones --- */
+    @media (max-width: 768px) {
+        #grid {
+            grid-template-columns: 1fr;
+        }
+
+        .project-card {
+            /* You can adjust width here if you want cards to be wider on mobile */
+            /* For example: width: 300px; */
+        }
     }
 </style>
