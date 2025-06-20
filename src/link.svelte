@@ -1,65 +1,44 @@
 <script>
-	let props = $props();
+  export let link = "";
+  export let text = "";
+  export let logo = "";
 </script>
 
-<div id="root">
-	<a href={props.link}>
-		<img src={props.logo} alt="logo" />&nbsp;
-		<h3>{props.text}</h3>
-		<svg
-			stroke-width="2"
-			stroke="currentColor"
-			viewBox="0 0 24 24"
-			fill="none"
-			class="h-6 w-6"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path
-				d="M14 5l7 7m0 0l-7 7m7-7H3"
-				stroke-linejoin="round"
-				stroke-linecap="round"
-			></path>
-		</svg>
-	</a>
-</div>
+<a href={link} class="link">
+  <img src={logo} alt="{text} logo" />
+  <span class="link-text">{text}</span>
+</a>
 
 <style>
-	#root {
-		display: flex;
-		align-items: center;
-		margin: 0;
-	}
+  .link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+  }
 
-	h3 {
-		margin: 0;
-	}
+  .link:hover {
+    background-color: #333;
+  }
 
-	a {
-		display: flex;
-		align-items: center;
-		margin-right: 20px;
-		margin-left: 0;
-		border-radius: 5px;
-		text-decoration: none;
-		color: white;
-		transition: all 0.2s linear;
-	}
+  .link img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
 
-	svg {
-		transform: rotate(90deg);
-		transition: all 0.2s linear;
-		opacity: 0;
-		width: 0px;
+  /* Adjust margin for icon-only view on mobile */
+  @media (max-width: 650px) {
+    .link img {
+      margin-right: 0px;
+    }
+	.link span {
+		display: none;
 	}
-
-	a:hover svg {
-		transform: rotate(-45deg);
-		width: 20px;
-		opacity: 1;
-	}
-
-	img {
-		width: 24px;
-		height: 24px;
-	}
+  }
 </style>
