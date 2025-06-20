@@ -61,6 +61,23 @@
             Images: ["javascript", "vercel"],
             Link: "https://github.com/andrinoff/bot-api",
             Type: "backend",
+        },
+        {
+            Name: "Infinite Wordle",
+            Description: "A Wordle copy. Was made for a technical interview, and finished afterwards",
+            Image: "https://i.imgur.com/3UTklGw.png",
+            Images: ["html5", "javascript", "css"],
+            Link: "https://andrinoff.github.io/infinite-wordle/",
+            Type: "fullstack"
+        },
+        {
+            Name: "Assets Viewer",
+            Description: "A website that helps you view assets in a repository in a user-friendly way",
+            Image: "https://i.imgur.com/sWVh3Cn.png",
+            Images: ["html5", "javascript", "css"],
+            Link: "https://github.com/tbilisihc/assets",
+            Type: "fullstack"
+
         }
 
     ];
