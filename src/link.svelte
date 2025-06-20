@@ -15,7 +15,7 @@
     align-items: center;
     text-decoration: none;
     color: white;
-    background-color: #1a1a1a;
+    background-color: #14191f;
     padding: 10px 20px;
     border-radius: 8px;
     margin: 0 10px;
