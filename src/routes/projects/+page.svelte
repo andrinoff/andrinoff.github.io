@@ -67,7 +67,7 @@
             Description: "A Wordle copy. Was made for a technical interview, and finished afterwards",
             Image: "https://i.imgur.com/3UTklGw.png",
             Images: ["html5", "javascript", "css"],
-            Link: "https://andrinoff.github.io/infinite-wordle/",
+            Link: "https://wordle.andrinoff.com",
             Type: "fullstack"
         },
         {
