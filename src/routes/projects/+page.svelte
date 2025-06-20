@@ -127,7 +127,7 @@
         gap: 20px;
         max-width: 1200px;
         justify-content: center;
-        
+
     }
 
     .project-card {
@@ -186,11 +186,9 @@
         cursor: pointer;
         font-size: 16px;
         font-family: "Funnel Display", sans-serif;
-        transition: all 0.3s ease;
     }
     .ViewProject:hover {
         background-color: #333;
-        transform: scale(1.05) rotateZ(-5deg);
     }
 
     /* --- Styles for Tablets --- */
@@ -204,11 +202,6 @@
     @media (max-width: 768px) {
         #grid {
             grid-template-columns: 1fr;
-        }
-
-        .project-card {
-            /* You can adjust width here if you want cards to be wider on mobile */
-            /* For example: width: 300px; */
         }
     }
 </style>

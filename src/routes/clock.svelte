@@ -5,13 +5,13 @@
     /**
 	 * @returns {Date}
 	 */
- 
+
   function getTbilisiTime() {
     const now = new Date();
     const localTime = now.getTime();
     const localOffset = now.getTimezoneOffset() * 60000;
     const utc = localTime + localOffset;
-    const tbilisiOffset = 7 * 3600000; 
+    const tbilisiOffset = 7 * 3600000;
     const tbilisiTime = new Date(utc + tbilisiOffset);
     return tbilisiTime;
   }
@@ -29,13 +29,13 @@
   onDestroy(() => {
     clearInterval(interval);
   });
-  
+
   $: hours = time.getUTCHours().toString().padStart(2, '0');
   $: minutes = time.getUTCMinutes().toString().padStart(2, '0');
   $: seconds = time.getUTCSeconds().toString().padStart(2, '0');
 </script>
 
-<!-- 
+<!--
   svelte:head allows us to insert elements into the document's <head>.
   Here, we're importing the 'Orbitron' font from Google Fonts to get a nice digital clock style.
 -->
@@ -55,7 +55,7 @@
     <span class="time-part">{seconds}</span>
   </div>
   <div class="date-display">
-    {time.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
+    Tbilisi, Georgia
   </div>
 </div>
 
@@ -79,7 +79,7 @@
     font-weight: 700;
     line-height: 1;
   }
-  
+
   .time-part {
     min-width: 120px;
     text-align: center;
@@ -118,7 +118,7 @@
 
     .clock-face {
       /* Decrease the main clock font size */
-      font-size: 3rem; 
+      font-size: 3rem;
     }
 
     .time-part {
