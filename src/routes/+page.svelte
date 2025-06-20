@@ -5,6 +5,7 @@
 
 <div id="root">
     <div>
+        <Clock />
         <div id="text">
             <img src = "https://tbilisi.hackclub.com/drew/avatar.png" style="min-width: 200px; max-width: 200px; min-height: 200px; max-height: 200px; object-fit: cover; border-radius: 50%;" alt="Drew's Avatar" />
             <div id  = "textContent">
@@ -19,7 +20,7 @@
             </div>
         </div>
         <hr />
-        
+
     </div>
     <div id="root">
     <div>
@@ -49,7 +50,7 @@
         </div>
     </div>
 </div>
-<Clock />
+
 </div>
 
 <style>
@@ -89,7 +90,7 @@
         margin: 0px;
         color: #818181;
     }
-    
+
     #whitespace {
         width: 40px;
         height: 10px;

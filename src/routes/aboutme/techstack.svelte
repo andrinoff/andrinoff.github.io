@@ -30,24 +30,12 @@
       Name: "MySQL",
     },
     {
-      Image: "rust",
-      Name: "Rust",
-    },
-    {
-      Image: "sharp",
-      Name: "C#",
-    },
-    {
-      Image: "godotengine",
-      Name: "GDScript",
-    },
-    {
       Image: "go",
       Name: "Golang",
     },
 
 
-    
+
 
   ];
 
