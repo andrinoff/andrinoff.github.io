@@ -87,7 +87,9 @@
     >
   </div>
 </div>
-<a rel="me" href="https://mastodon.social/@andrinoff">Mastodon</a>
+<a rel="me" href="https://mastodon.social/@andrinoff" style="display:none"
+  >Mastodon</a
+>
 
 <style>
   @import "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css";
