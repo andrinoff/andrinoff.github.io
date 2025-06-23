@@ -28,8 +28,7 @@
       name: "Bot API",
       description:
         "A customizable API that sends your message in different channels.",
-      image:
-        "https://user-images.githubusercontent.com/6949945/219879737-f01c6f37-1221-4328-9a67-27b919d3f18e.png",
+      image: "https://api.nuget.org/v3-flatcontainer/telegram.bot/22.5.1/icon",
       tech: ["vercel", "go"],
       link: "https://github.com/andrinoff/bot-api",
       type: "backend",
@@ -38,7 +37,8 @@
       name: "Organization Auto-Join",
       description:
         "An API that automatically invites you to a set organization team.",
-      image: "https://www.cril.univ-artois.fr/pyxai/assets/figures/github.png",
+      image:
+        "https://freepnglogo.com/images/all_img/github-white-logo-d748.png",
       tech: ["javascript", "vercel", "github"],
       link: "https://github.com/andrinoff/org-auto-invite",
       type: "backend",
