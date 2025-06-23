@@ -3,14 +3,6 @@
 
   let Projects = [
     {
-      Name: "Personal Website",
-      Description: "This awesome website about me and my projects!",
-      Image: "https://i.imgur.com/5zHfTeQ.png",
-      Images: ["Javascript", "svelte", "vite"],
-      Link: "https://andrinoff.github.io",
-      Type: "fullstack",
-    },
-    {
       Name: "Work Progress",
       Description:
         "A VS Code extension that shows your work progress in a nice way.",
@@ -29,23 +21,6 @@
       Type: "backend",
     },
     {
-      Name: "Currency Converter",
-      Description: "A Telegram bot with multi-language support",
-      Image:
-        "https://www.investopedia.com/thmb/lSMOlzF853E72-0HDkH25mmAdOM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-848755326-48dd2711646247648c4faebc98715119.jpg",
-      Images: ["python", "sqlite", "telegram"],
-      Link: "https://github.com/andrinoff/TelegramCurrencyConverter",
-      Type: "backend",
-    },
-    {
-      Name: "Tbilisi Hack Club Website",
-      Description: "A website for Tbilisi Hack Club",
-      Image: "https://i.imgur.com/bfV8QXt.png",
-      Images: ["svelte", "tailwindcss"],
-      Link: "https://tbilisi.hackclub.com",
-      Type: "frontend",
-    },
-    {
       Name: "Bot API",
       Description:
         "A customizable API that sends your message in different channels",
@@ -61,7 +36,7 @@
         "An API that automatically invites you to the set organization team",
       Image: "https://www.cril.univ-artois.fr/pyxai/assets/figures/github.png",
       Images: ["javascript", "vercel"],
-      Link: "https://github.com/andrinoff/bot-api",
+      Link: "https://github.com/andrinoff/org-auto-invite",
       Type: "backend",
     },
     {
@@ -82,6 +57,39 @@
       Link: "https://github.com/tbilisihc/assets",
       Type: "fullstack",
     },
+    {
+      Name: "2048",
+      Description:
+        "Recreation of the classic 2048 game using just HTMl, CSS, and JavaScript",
+      Image: "https://i.imgur.com/s0BsvsX.png",
+      Images: ["html5", "javascript", "css"],
+      Link: "https://github.com/tbilisihc/assets",
+      Type: "fullstack",
+    },
+    {
+      Name: "Liquid Simulator",
+      Description: "WebGL liquid simulation",
+      Image: "https://i.imgur.com/gDcUQuD.png",
+      Images: ["javascript", "webgl", "c"],
+      Link: "https://github.com/andrinoff/liquid-metal",
+      Type: "Interesting",
+    },
+    {
+      Name: "Particles",
+      Description: "WebGL particle simulation.",
+      Image: "https://i.imgur.com/NK8q0wX.png",
+      Images: ["javascript", "webgl", "c"],
+      Link: "https://github.com/andrinoff/particles",
+      Type: "Interesting",
+    },
+    {
+      Name: "Tesseract",
+      Description: "4d Hypercube drawn with WebGL",
+      Image: "https://i.imgur.com/XCDG3aY.png",
+      Images: ["javascript", "webgl", "c"],
+      Link: "https://github.com/andrinoff/hypercube",
+      Type: "Interesting",
+    },
   ];
 
   // Get unique types
@@ -89,17 +97,17 @@
 </script>
 
 <div id="root">
-  <h1>My Projects</h1>
+  <h1 class="text-3xl md:text-4xl font-bold text-center mt-10">My Projects</h1>
   {#each types as type}
-    <h2 style="margin-top:2em">
+    <h1 class="mb-10 mt-20 text-2xl font-bold text-center">
       {type.charAt(0).toUpperCase() + type.slice(1)} Projects
-    </h2>
+    </h1>
     <div id="grid">
       {#each Projects.filter((p) => p.Type === type) as Project}
         <div class="project-card">
           <div class="card-content">
             {#if Project.Name}
-              <h2>{Project.Name}</h2>
+              <h1 class="text-xl font-bold">{Project.Name}</h1>
             {/if}
             <p>{@html Project.Description}</p>
           </div>
@@ -147,7 +155,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 1200px;
-    justify-content: center;
   }
 
   .project-card {
@@ -166,7 +173,7 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     align-items: center;
   }
 
