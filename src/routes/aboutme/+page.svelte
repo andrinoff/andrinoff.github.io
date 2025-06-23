@@ -91,6 +91,23 @@
 
   .content-section {
     width: 100%;
+    /* Animation properties */
+    opacity: 0; /* Start hidden */
+    animation: floatIn 0.7s ease-out forwards;
+  }
+
+  /* Stagger the animation delay for a cascading effect */
+  .about-page-container > .content-section:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .about-page-container > .content-section:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .about-page-container > .content-section:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .about-page-container > .content-section:nth-child(4) {
+    animation-delay: 0.4s;
   }
 
   .section-title {
@@ -174,5 +191,17 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+  }
+
+  /* Keyframes for the animation */
+  @keyframes floatIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>

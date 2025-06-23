@@ -28,7 +28,8 @@
       name: "Bot API",
       description:
         "A customizable API that sends your message in different channels.",
-      image: "https://api.nuget.org/v3-flatcontainer/telegram.bot/22.5.1/icon",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXbI9dX4sO8hm_qoSSXy0QNpDNshfdoiQ1KA&s",
       tech: ["vercel", "go"],
       link: "https://github.com/andrinoff/bot-api",
       type: "backend",
@@ -87,14 +88,20 @@
   <h1 class="page-title">My Projects</h1>
   <p class="page-subtitle">A collection of things I've built.</p>
 
-  {#each types as type}
-    <section class="project-type-section">
+  {#each types as type, typeIndex}
+    <section
+      class="project-type-section"
+      style="animation-delay: {typeIndex * 200 + 200}ms"
+    >
       <h2 class="section-title">
         {type.charAt(0).toUpperCase() + type.slice(1)}
       </h2>
       <div class="projects-grid">
-        {#each projects.filter((p) => p.type === type) as project}
-          <div class="project-card">
+        {#each projects.filter((p) => p.type === type) as project, projectIndex}
+          <div
+            class="project-card"
+            style="animation-delay: {projectIndex * 100}ms"
+          >
             <a
               href={project.link}
               target="_blank"
@@ -141,10 +148,19 @@
     width: 100%;
   }
 
+  .page-title,
+  .page-subtitle,
+  .project-type-section,
+  .project-card {
+    opacity: 0;
+    animation: floatIn 0.7s ease-out forwards;
+  }
+
   .page-title {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 0.5rem;
+    animation-delay: 0.1s;
   }
 
   .page-subtitle {
@@ -152,6 +168,7 @@
     font-size: 1.1rem;
     color: #8b949e;
     margin-bottom: 4rem;
+    animation-delay: 0.2s;
   }
 
   .project-type-section {
@@ -170,7 +187,6 @@
 
   .projects-grid {
     display: grid;
-    /* Responsive grid: 3 columns on large screens, 2 on medium, 1 on small */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
   }
@@ -181,7 +197,7 @@
     border-radius: 16px;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Ensures content respects border-radius */
+    overflow: hidden;
     transition:
       transform 0.2s ease-in-out,
       box-shadow 0.2s ease-in-out;
@@ -194,14 +210,14 @@
 
   .image-link {
     display: block;
-    height: 200px; /* Fixed height for image container */
+    height: 200px;
     background-color: #0d1117;
   }
 
   .project-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Changed to cover for better image display */
+    object-fit: cover;
     border-bottom: 1px solid #30363d;
   }
 
@@ -209,7 +225,7 @@
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Allows this section to fill available space */
+    flex-grow: 1;
   }
 
   .project-name {
@@ -220,14 +236,14 @@
   .project-description {
     color: #8b949e;
     line-height: 1.6;
-    flex-grow: 1; /* Pushes tech-stack and button to the bottom */
+    flex-grow: 1;
   }
 
   .tech-stack {
     display: flex;
     gap: 0.75rem;
     margin-top: 1rem;
-    flex-wrap: wrap; /* Allows icons to wrap if needed */
+    flex-wrap: wrap;
   }
 
   .tech-icon {
@@ -242,7 +258,7 @@
     color: #c9d1d9;
     text-align: center;
     padding: 0.75rem;
-    margin: 1.5rem 1.5rem 1.5rem; /* Margin provides spacing */
+    margin: 1.5rem 1.5rem 1.5rem;
     border-radius: 8px;
     font-weight: 600;
     transition: background-color 0.2s ease;
@@ -250,7 +266,19 @@
 
   .project-link-button:hover {
     background-color: #30363d;
-    text-decoration: none; /* Override default link hover */
+    text-decoration: none;
     color: #f0f6fc;
+  }
+
+  /* Keyframes for the animation */
+  @keyframes floatIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
