@@ -42,7 +42,7 @@
   <LinkMob
     link="https://github.com/andrinoff"
     logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/f202b6faccfd5cc46299b976c2635fee60b55aa0_github-mark-white.svg"
-  />1
+  />
 </div>
 
 <style>
