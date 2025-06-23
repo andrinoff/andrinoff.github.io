@@ -1,234 +1,256 @@
+<!-- +page.svelte -->
 <script>
-  import Link from "../../link.svelte";
+  // No need to import Link here unless you use it for something else.
+  // The project data is now self-contained in this component.
 
-  let Projects = [
+  // Array of project objects
+  let projects = [
     {
-      Name: "Work Progress",
-      Description:
+      name: "Work Progress",
+      description:
         "A VS Code extension that shows your work progress in a nice way.",
-      Image:
+      image:
         "https://github.com/andrinoff/work-progress.github.io/blob/master/icon.png?raw=true",
-      Images: ["typescript"],
-      Link: "https://github.com/andrinoff/work-progress",
-      Type: "fullstack",
+      tech: ["typescript", "vscodium"],
+      link: "https://github.com/andrinoff/work-progress",
+      type: "fullstack",
     },
     {
-      Name: "Anglobotik",
-      Description: "A Telegram bot that helps you mock English writing exam",
-      Image: "https://github.com/andrinoff/anglobotik/raw/main/docs/icon.jpg",
-      Images: ["python", "telegram", "openai"],
-      Link: "https://github.com/andrinoff/anglobotik",
-      Type: "backend",
+      name: "Anglobotik",
+      description:
+        "A Telegram bot that helps you mock an English writing exam.",
+      image: "https://github.com/andrinoff/anglobotik/raw/main/docs/icon.jpg",
+      tech: ["python", "telegram", "openai"],
+      link: "https://github.com/andrinoff/anglobotik",
+      type: "backend",
     },
     {
-      Name: "Bot API",
-      Description:
-        "A customizable API that sends your message in different channels",
-      Image:
-        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fzt4zmavxge1lg5u7lkp7.jpg",
-      Images: ["vercel", "go"],
-      Link: "https://github.com/andrinoff/bot-api",
-      Type: "backend",
+      name: "Bot API",
+      description:
+        "A customizable API that sends your message in different channels.",
+      image:
+        "https://user-images.githubusercontent.com/6949945/219879737-f01c6f37-1221-4328-9a67-27b919d3f18e.png",
+      tech: ["vercel", "go"],
+      link: "https://github.com/andrinoff/bot-api",
+      type: "backend",
     },
     {
-      Name: "Organization auto-join",
-      Description:
-        "An API that automatically invites you to the set organization team",
-      Image: "https://www.cril.univ-artois.fr/pyxai/assets/figures/github.png",
-      Images: ["javascript", "vercel"],
-      Link: "https://github.com/andrinoff/org-auto-invite",
-      Type: "backend",
+      name: "Organization Auto-Join",
+      description:
+        "An API that automatically invites you to a set organization team.",
+      image: "https://www.cril.univ-artois.fr/pyxai/assets/figures/github.png",
+      tech: ["javascript", "vercel", "github"],
+      link: "https://github.com/andrinoff/org-auto-invite",
+      type: "backend",
     },
     {
-      Name: "Infinite Wordle",
-      Description:
-        "A Wordle copy. Was made for a technical interview, and finished afterwards",
-      Image: "https://i.imgur.com/3UTklGw.png",
-      Images: ["html5", "javascript", "css"],
-      Link: "https://wordle.andrinoff.com",
-      Type: "fullstack",
+      name: "Infinite Wordle",
+      description:
+        "A Wordle copy made for a technical interview, and finished afterwards.",
+      image: "https://i.imgur.com/3UTklGw.png",
+      tech: ["html5", "javascript", "css"],
+      link: "https://wordle.andrinoff.com",
+      type: "fullstack",
     },
     {
-      Name: "Assets Viewer",
-      Description:
-        "A website that helps you view assets in a repository in a user-friendly way",
-      Image: "https://i.imgur.com/sWVh3Cn.png",
-      Images: ["html5", "javascript", "css"],
-      Link: "https://github.com/tbilisihc/assets",
-      Type: "fullstack",
+      name: "Liquid Simulator",
+      description: "A liquid metal simulation built with WebGL.",
+      image: "https://i.imgur.com/gDcUQuD.png",
+      tech: ["javascript", "webgl", "c"],
+      link: "https://github.com/andrinoff/liquid-metal",
+      type: "other",
     },
     {
-      Name: "2048",
-      Description:
-        "Recreation of the classic 2048 game using just HTMl, CSS, and JavaScript",
-      Image: "https://i.imgur.com/s0BsvsX.png",
-      Images: ["html5", "javascript", "css"],
-      Link: "https://github.com/tbilisihc/assets",
-      Type: "fullstack",
+      name: "Particles",
+      description: "A GPU-accelerated particle simulation using WebGL.",
+      image: "https://i.imgur.com/NK8q0wX.png",
+      tech: ["javascript", "webgl", "c"],
+      link: "https://github.com/andrinoff/particles",
+      type: "other",
     },
     {
-      Name: "Liquid Simulator",
-      Description: "WebGL liquid simulation",
-      Image: "https://i.imgur.com/gDcUQuD.png",
-      Images: ["javascript", "webgl", "c"],
-      Link: "https://github.com/andrinoff/liquid-metal",
-      Type: "Interesting",
-    },
-    {
-      Name: "Particles",
-      Description: "WebGL particle simulation.",
-      Image: "https://i.imgur.com/NK8q0wX.png",
-      Images: ["javascript", "webgl", "c"],
-      Link: "https://github.com/andrinoff/particles",
-      Type: "Interesting",
-    },
-    {
-      Name: "Tesseract",
-      Description: "4d Hypercube drawn with WebGL",
-      Image: "https://i.imgur.com/XCDG3aY.png",
-      Images: ["javascript", "webgl", "c"],
-      Link: "https://github.com/andrinoff/hypercube",
-      Type: "Interesting",
+      name: "Tesseract",
+      description:
+        "A 4D hypercube (tesseract) rendered in 3D space with WebGL.",
+      image: "https://i.imgur.com/XCDG3aY.png",
+      tech: ["javascript", "webgl"],
+      link: "https://github.com/andrinoff/hypercube",
+      type: "other",
     },
   ];
 
-  // Get unique types
-  let types = [...new Set(Projects.map((p) => p.Type))];
+  // Get unique types from the projects array
+  const types = [...new Set(projects.map((p) => p.type))];
 </script>
 
-<div id="root">
-  <h1 class="text-3xl md:text-4xl font-bold text-center mt-10">My Projects</h1>
+<div class="projects-page-container">
+  <h1 class="page-title">My Projects</h1>
+  <p class="page-subtitle">A collection of things I've built.</p>
+
   {#each types as type}
-    <h1 class="mb-10 mt-20 text-2xl font-bold text-center">
-      {type.charAt(0).toUpperCase() + type.slice(1)} Projects
-    </h1>
-    <div id="grid">
-      {#each Projects.filter((p) => p.Type === type) as Project}
-        <div class="project-card">
-          <div class="card-content">
-            {#if Project.Name}
-              <h1 class="text-xl font-bold">{Project.Name}</h1>
-            {/if}
-            <p>{@html Project.Description}</p>
-          </div>
-          <div class="image-gallery">
-            {#each Project.Images as Image}
+    <section class="project-type-section">
+      <h2 class="section-title">
+        {type.charAt(0).toUpperCase() + type.slice(1)}
+      </h2>
+      <div class="projects-grid">
+        {#each projects.filter((p) => p.type === type) as project}
+          <div class="project-card">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="image-link"
+            >
               <img
-                class="gallery-image"
-                alt="Project Tech Stack"
-                src="https://cdn.simpleicons.org/{Image}/grey"
+                class="project-image"
+                src={project.image}
+                alt="{project.name} preview"
               />
-            {/each}
+            </a>
+            <div class="card-content">
+              <h3 class="project-name">{project.name}</h3>
+              <p class="project-description">{@html project.description}</p>
+              <div class="tech-stack">
+                {#each project.tech as techIcon}
+                  <img
+                    class="tech-icon"
+                    alt={techIcon}
+                    src="https://cdn.simpleicons.org/{techIcon}/white"
+                    title={techIcon.charAt(0).toUpperCase() + techIcon.slice(1)}
+                  />
+                {/each}
+              </div>
+            </div>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link-button"
+            >
+              View Project
+            </a>
           </div>
-          <div class="image-cover">
-            <img class="main-image" src={Project.Image} alt="Project" />
-          </div>
-          <a href={Project.Link} target="_blank" class="project-link">
-            <button class="ViewProject">Open Project</button>
-          </a>
-        </div>
-      {/each}
-    </div>
+        {/each}
+      </div>
+    </section>
   {/each}
 </div>
 
 <style>
-  #root {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    align-items: center;
-    padding: 0 10px; /* Add some padding for small screens */
-  }
-  h2,
-  p {
-    margin: 0;
-    padding: 5px;
+  .projects-page-container {
+    width: 100%;
   }
 
-  p {
-    color: #818181;
+  .page-title {
+    font-size: 3rem;
     text-align: center;
+    margin-bottom: 0.5rem;
   }
-  #grid {
+
+  .page-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #8b949e;
+    margin-bottom: 4rem;
+  }
+
+  .project-type-section {
+    margin-bottom: 4rem;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    color: #c9d1d9;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #30363d;
+  }
+
+  .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1200px;
+    /* Responsive grid: 3 columns on large screens, 2 on medium, 1 on small */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
   }
 
   .project-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border: 3px solid #333;
-    width: 250px;
-    margin: 10px;
-    padding: 5px;
-    padding-bottom: 0px;
+    overflow: hidden; /* Ensures content respects border-radius */
+    transition:
+      transform 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .image-link {
+    display: block;
+    height: 200px; /* Fixed height for image container */
+    background-color: #0d1117;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Changed to cover for better image display */
+    border-bottom: 1px solid #30363d;
   }
 
   .card-content {
-    flex-grow: 1;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-
-    align-items: center;
+    flex-grow: 1; /* Allows this section to fill available space */
   }
 
-  .image-gallery {
+  .project-name {
+    font-size: 1.5rem;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .project-description {
+    color: #8b949e;
+    line-height: 1.6;
+    flex-grow: 1; /* Pushes tech-stack and button to the bottom */
+  }
+
+  .tech-stack {
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    flex-wrap: wrap; /* Allows icons to wrap if needed */
   }
-  .gallery-image {
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
+
+  .tech-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
   }
-  .image-cover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  .main-image {
-    height: 146px;
-    max-width: 246px;
+
+  .project-link-button {
+    display: block;
+    background-color: #21262d;
+    color: #c9d1d9;
     text-align: center;
-    border: 2px solid #2e2e2e;
-  }
-  .project-link {
-    width: 100%;
-  }
-  .ViewProject {
-    background-color: #242424;
-    color: white;
-    border: none;
-    margin-bottom: 5px;
-    padding: 10px;
-    width: 100%;
-    cursor: pointer;
-    font-size: 16px;
-    font-family: "Funnel Display", sans-serif;
-  }
-  .ViewProject:hover {
-    background-color: #333;
+    padding: 0.75rem;
+    margin: 1.5rem 1.5rem 1.5rem; /* Margin provides spacing */
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
   }
 
-  /* --- Styles for Tablets --- */
-  @media (max-width: 1024px) {
-    #grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  /* --- Styles for Mobile Phones --- */
-  @media (max-width: 768px) {
-    #grid {
-      grid-template-columns: 1fr;
-    }
+  .project-link-button:hover {
+    background-color: #30363d;
+    text-decoration: none; /* Override default link hover */
+    color: #f0f6fc;
   }
 </style>
