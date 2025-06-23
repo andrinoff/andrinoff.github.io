@@ -1,136 +1,157 @@
+<!-- +page.svelte -->
 <script>
   import Link from "../link.svelte";
   import Clock from "./clock.svelte";
 </script>
 
-<div id="root">
-  <div>
-    <Clock />
-    <div id="text">
+<div class="page-content">
+  <section class="hero-section mt-20">
+    <div class="profile-card">
       <img
         src="https://tbilisi.hackclub.com/drew/avatar.png"
-        style="min-width: 200px; max-width: 200px; min-height: 200px; max-height: 200px; object-fit: cover; border-radius: 50%;"
-        alt="Drew's Avatar"
+        alt="Drew Smirnoff's Avatar"
+        class="avatar"
       />
-      <div id="textContent">
-        <h1 id="YoHeading" class="md: text-1xl">Drew Smirnoff</h1>
-        <h5 id="boutMe">
-          Software engineer <br /> Based in Tbilisi<img
-            id="whitespace"
-            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/1feaf8b5942eca66775bc7ccadc8619cbf54cd07_1af71bf06d88b950.png"
-            alt="!"
-          />
-        </h5>
+      <div class="profile-text">
+        <h1 class="name-heading">Drew Smirnoff</h1>
+        <p class="bio">
+          Software Engineer <span class="divider">|</span> Based in Tbilisi
+        </p>
       </div>
     </div>
-    <hr />
-  </div>
-  <div id="root">
-    <div>
-      <div id="me" class="align-center flex-col text-center"></div>
-      <div id="links" class="flex text-center justify-center">
-        <Link
-          link="https://linkedin.com/in/andrinoff"
-          text="LinkedIn"
-          logo="https://img.icons8.com/?size=100&id=447&format=png&color=FFFFFF"
-        />
-        <Link
-          link="https://mastodon.social/@andrinoff"
-          text="Email"
-          logo="https://cdn.simpleicons.org/mastodon/white"
-        />
-
-        <Link
-          link="https://t.me/andrinoff"
-          text="Telegram"
-          logo="https://cdn.simpleicons.org/telegram/white"
-        />
-        <Link
-          link="https://instagram.com/andrinoff.dev"
-          text="Instagram"
-          logo="https://cdn.simpleicons.org/instagram/white"
-        />
-      </div>
+  </section>
+  <Clock />
+  <section class="links-section">
+    <h2 class="section-title">Connect With Me</h2>
+    <div class="links-grid">
+      <Link
+        link="https://linkedin.com/in/andrinoff"
+        text="LinkedIn"
+        logo="https://img.icons8.com/m_rounded/512/FFFFFF/linkedin--v2.png"
+      />
+      <Link
+        link="mailto:business@andrinoff.com"
+        text="Email"
+        logo="https://cdn.simpleicons.org/gmail/white"
+      />
+      <Link
+        link="https://t.me/andrinoff"
+        text="Telegram"
+        logo="https://cdn.simpleicons.org/telegram/white"
+      />
+      <Link
+        link="https://instagram.com/andrinoff.dev"
+        text="Instagram"
+        logo="https://cdn.simpleicons.org/instagram/white"
+      />
     </div>
-  </div>
+  </section>
 </div>
 
 <style>
-  #root {
-    display: grid;
-    place-content: center;
-    height: 100%;
-    margin: 0px;
-  }
-
-  #text {
-    margin: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center; /* Vertically align items in flex row */
-  }
-
-  #textContent {
+  .page-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-left: 20px;
-  }
-  #links {
-    width: fit-content;
-    margin: 20px;
-    display: flex; /* Ensure flex is explicitly defined */
-    justify-content: center;
+    gap: 4rem; /* Adds space between sections */
   }
 
-  #YoHeading {
-    margin: 0px;
-    color: aliceblue;
-    font-size: 50px;
-  }
-  #boutMe {
-    margin: 0px;
-    color: #818181;
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  #whitespace {
-    width: 40px;
-    height: 10px;
-    opacity: 0;
-  }
-  hr {
+  .profile-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
     width: 100%;
-    border: 1px solid #242424;
+    background-color: #161b22;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid #30363d;
   }
 
-  /* --- Styles for Mobile Devices --- */
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #30363d;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .profile-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name-heading {
+    margin: 0;
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  .bio {
+    margin: 0.25rem 0 0 0;
+    font-size: 1.1rem;
+    color: #8b949e;
+  }
+
+  .divider {
+    color: #484f58;
+    margin: 0 0.5rem;
+  }
+
+  .links-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    color: #c9d1d9;
+    border-bottom: 2px solid #58a6ff;
+    padding-bottom: 0.5rem;
+  }
+
+  .links-grid {
+    display: grid;
+    /* Create 4 columns on desktop, 2 on tablet, and 1 on mobile */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  /* --- Responsive Styles --- */
+  @media (max-width: 900px) {
+    .links-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @media (max-width: 768px) {
-    #text {
-      flex-direction: column; /* Stack image and text vertically */
-      text-align: center; /* Center align the text */
+    .profile-card {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
     }
 
-    /* The inline style on the image tag will override this, so we need to use !important or remove the inline styles */
-    #text img {
-      min-width: 150px !important;
-      max-width: 150px !important;
-      min-height: 150px !important;
-      max-height: 150px !important;
+    .name-heading {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .links-grid {
+      grid-template-columns: 1fr;
     }
 
-    #textContent {
-      margin-left: 0; /* Remove side margin */
-      margin-top: 20px; /* Add top margin for spacing */
-      align-items: center; /* Center content inside */
-    }
-
-    #YoHeading {
-      font-size: 40px; /* Reduce font size for smaller screens */
-    }
-
-    #links {
-      flex-wrap: wrap; /* Allow links to wrap to the next line */
-      margin: 10px auto; /* Reduce vertical margin and center the block */
+    .avatar {
+      width: 120px;
+      height: 120px;
     }
   }
 </style>

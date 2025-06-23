@@ -1,10 +1,9 @@
 <script>
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy } from "svelte";
 
-
-    /**
-	 * @returns {Date}
-	 */
+  /**
+   * @returns {Date}
+   */
 
   function getTbilisiTime() {
     const now = new Date();
@@ -25,14 +24,13 @@
     }, 1000);
   });
 
-
   onDestroy(() => {
     clearInterval(interval);
   });
 
-  $: hours = time.getUTCHours().toString().padStart(2, '0');
-  $: minutes = time.getUTCMinutes().toString().padStart(2, '0');
-  $: seconds = time.getUTCSeconds().toString().padStart(2, '0');
+  $: hours = time.getUTCHours().toString().padStart(2, "0");
+  $: minutes = time.getUTCMinutes().toString().padStart(2, "0");
+  $: seconds = time.getUTCSeconds().toString().padStart(2, "0");
 </script>
 
 <!--
@@ -40,9 +38,12 @@
   Here, we're importing the 'Orbitron' font from Google Fonts to get a nice digital clock style.
 -->
 <svelte:head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
 </svelte:head>
 
 <!-- HTML structure for the clock -->
@@ -54,14 +55,11 @@
     <span class="separator">:</span>
     <span class="time-part">{seconds}</span>
   </div>
-  <div class="date-display">
-    Tbilisi, Georgia
-  </div>
+  <div class="date-display">Tbilisi, Georgia</div>
 </div>
 
 <style>
   .clock-container {
-    margin-top: 20px;
     text-align: center;
     color: #fff;
     background: #14191f;
@@ -74,7 +72,7 @@
     display: flex;
     align-items: baseline;
     justify-content: center;
-    font-family: 'Orbitron', sans-serif; /* Moved font-family here to apply to all children */
+    font-family: "Orbitron", sans-serif; /* Moved font-family here to apply to all children */
     font-size: 5rem;
     font-weight: 700;
     line-height: 1;

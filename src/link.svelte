@@ -4,10 +4,12 @@
   export let logo = "";
 </script>
 
-<a href={link} class="link">
-  <img src={logo} alt="{text} logo" />
-  <span class="link-text">{text}</span>
-</a>
+<div class="text-center flex flex-row justify-center">
+  <a href={link} class="link">
+    <img src={logo} alt="{text} logo" />
+    <span class="link-text text-center">{text}</span>
+  </a>
+</div>
 
 <style>
   .link {
@@ -37,8 +39,8 @@
     .link img {
       margin-right: 0px;
     }
-	.link span {
-		display: none;
-	}
+    .link span {
+      display: none;
+    }
   }
 </style>
