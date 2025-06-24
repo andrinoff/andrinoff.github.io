@@ -13,6 +13,7 @@
     { image: "nodedotjs", name: "Node.js" },
     { image: "react", name: "React" },
     { image: "javascript", name: "JS" },
+    { image: "rust", name: "Rust" },
   ];
 
   const NUM_COLUMNS = 4;

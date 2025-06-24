@@ -72,6 +72,7 @@ declare module '$env/static/private' {
 	export const npm_package_version: string;
 	export const XPC_SERVICE_NAME: string;
 	export const GPG_TTY: string;
+	export const GEMINI_API_KEY: string;
 	export const HOME: string;
 	export const SHLVL: string;
 	export const HOMEBREW_PREFIX: string;
@@ -168,6 +169,7 @@ declare module '$env/dynamic/private' {
 		npm_package_version: string;
 		XPC_SERVICE_NAME: string;
 		GPG_TTY: string;
+		GEMINI_API_KEY: string;
 		HOME: string;
 		SHLVL: string;
 		HOMEBREW_PREFIX: string;

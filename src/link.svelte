@@ -7,7 +7,9 @@
 <div class="text-center flex flex-row justify-center">
   <a href={link} class="link">
     <img src={logo} alt="{text} logo" />
-    <span class="link-text text-center">{text}</span>
+    {#if text != ""}
+    <p class="link-text text-center">{text}</p>
+    {/if}
   </a>
 </div>
 
