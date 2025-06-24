@@ -27,12 +27,13 @@
  */
 declare module '$env/static/private' {
 	export const STARSHIP_SHELL: string;
+	export const MANPATH: string;
+	export const GHOSTTY_RESOURCES_DIR: string;
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
-	export const WARP_HONOR_PS1: string;
-	export const SHELL: string;
 	export const TERM: string;
+	export const SHELL: string;
 	export const OMF_CONFIG: string;
 	export const MYVIMRC: string;
 	export const TMPDIR: string;
@@ -47,9 +48,7 @@ declare module '$env/static/private' {
 	export const npm_config_globalconfig: string;
 	export const SSH_AUTH_SOCK: string;
 	export const __CF_USER_TEXT_ENCODING: string;
-	export const WARP_IS_LOCAL_SHELL_SESSION: string;
 	export const npm_execpath: string;
-	export const WARP_USE_SSH_WRAPPER: string;
 	export const PATH: string;
 	export const npm_package_json: string;
 	export const npm_config_engine_strict: string;
@@ -73,16 +72,18 @@ declare module '$env/static/private' {
 	export const XPC_SERVICE_NAME: string;
 	export const GPG_TTY: string;
 	export const GEMINI_API_KEY: string;
-	export const HOME: string;
 	export const SHLVL: string;
+	export const HOME: string;
+	export const GHOSTTY_SHELL_INTEGRATION_NO_SUDO: string;
+	export const TERMINFO: string;
 	export const HOMEBREW_PREFIX: string;
 	export const OMF_PATH: string;
 	export const npm_config_cache: string;
 	export const LOGNAME: string;
 	export const STARSHIP_SESSION_KEY: string;
 	export const npm_lifecycle_script: string;
-	export const LC_CTYPE: string;
-	export const SSH_SOCKET_DIR: string;
+	export const XDG_DATA_DIRS: string;
+	export const GHOSTTY_BIN_DIR: string;
 	export const npm_config_user_agent: string;
 	export const HOMEBREW_CELLAR: string;
 	export const OSLogRateLimit: string;
@@ -124,12 +125,13 @@ declare module '$env/static/public' {
 declare module '$env/dynamic/private' {
 	export const env: {
 		STARSHIP_SHELL: string;
+		MANPATH: string;
+		GHOSTTY_RESOURCES_DIR: string;
 		TERM_PROGRAM: string;
 		NODE: string;
 		INIT_CWD: string;
-		WARP_HONOR_PS1: string;
-		SHELL: string;
 		TERM: string;
+		SHELL: string;
 		OMF_CONFIG: string;
 		MYVIMRC: string;
 		TMPDIR: string;
@@ -144,9 +146,7 @@ declare module '$env/dynamic/private' {
 		npm_config_globalconfig: string;
 		SSH_AUTH_SOCK: string;
 		__CF_USER_TEXT_ENCODING: string;
-		WARP_IS_LOCAL_SHELL_SESSION: string;
 		npm_execpath: string;
-		WARP_USE_SSH_WRAPPER: string;
 		PATH: string;
 		npm_package_json: string;
 		npm_config_engine_strict: string;
@@ -170,16 +170,18 @@ declare module '$env/dynamic/private' {
 		XPC_SERVICE_NAME: string;
 		GPG_TTY: string;
 		GEMINI_API_KEY: string;
-		HOME: string;
 		SHLVL: string;
+		HOME: string;
+		GHOSTTY_SHELL_INTEGRATION_NO_SUDO: string;
+		TERMINFO: string;
 		HOMEBREW_PREFIX: string;
 		OMF_PATH: string;
 		npm_config_cache: string;
 		LOGNAME: string;
 		STARSHIP_SESSION_KEY: string;
 		npm_lifecycle_script: string;
-		LC_CTYPE: string;
-		SSH_SOCKET_DIR: string;
+		XDG_DATA_DIRS: string;
+		GHOSTTY_BIN_DIR: string;
 		npm_config_user_agent: string;
 		HOMEBREW_CELLAR: string;
 		OSLogRateLimit: string;

@@ -1,12 +1,9 @@
 <script>
-  import Link from "../link.svelte";
   import Clock from "./clock.svelte";
 </script>
 
 <div class="home-page-container">
-  <!-- Main Hero Card -->
   <div class="hero-card">
-    <!-- Profile Section -->
     <section class="profile-section">
       <img
         src="https://tbilisi.hackclub.com/drew/avatar.png"
@@ -21,10 +18,8 @@
       </div>
     </section>
 
-    <!-- Divider Line -->
     <hr class="card-divider" />
 
-    <!-- Integrated Clock and Links -->
     <section class="dashboard-section">
       <div class="clock-wrapper">
         <Clock />
@@ -32,28 +27,39 @@
       <div class="links-wrapper">
         <h2 class="connect-title">Connect</h2>
         <div class="links-grid">
-          <Link
-            link="https://linkedin.com/in/andrinoff"
-            logo="https://img.icons8.com/m_rounded/512/FFFFFF/linkedin--v2.png"
-          />
-          <Link
-            link="mailto:business@andrinoff.com"
-            logo="https://cdn.simpleicons.org/gmail/white"
-          />
-          <Link
-            link="https://t.me/andrinoff"
-            logo="https://cdn.simpleicons.org/telegram/white"
-          />
-          <Link
-            link="https://instagram.com/andrinoff.dev"
-            logo="https://cdn.simpleicons.org/instagram/white"
-          />
+          <a href="https://linkedin.com/in/andrinoff" class="custom-link">
+            <img
+              src="https://img.icons8.com/m_rounded/512/FFFFFF/linkedin--v2.png"
+              alt="LinkedIn"
+              class="custom-link-image"
+            />
+          </a>
+          <a href="mailto:business@andrinoff.com" class="custom-link">
+            <img
+              src="https://cdn.simpleicons.org/gmail/white"
+              alt="Email"
+              class="custom-link-image"
+            />
+          </a>
+          <a href="https://t.me/andrinoff" class="custom-link">
+            <img
+              src="https://cdn.simpleicons.org/telegram/white"
+              alt="Telegram"
+              class="custom-link-image"
+            />
+          </a>
+          <a href="https://instagram.com/andrinoff.dev" class="custom-link">
+            <img
+              src="https://cdn.simpleicons.org/instagram/white"
+              alt="Instagram"
+              class="custom-link-image"
+            />
+          </a>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- Biography Section -->
   <section class="biography-section">
     <h2 class="biography-title">Biography</h2>
     <div class="biography-content">
@@ -175,6 +181,16 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+
+  .custom-link img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+
+  .custom-link:hover img {
+    transform: scale(1.1);
   }
 
   .clock-wrapper {

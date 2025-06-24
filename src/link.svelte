@@ -8,7 +8,7 @@
   <a href={link} class="link">
     <img src={logo} alt="{text} logo" />
     {#if text != ""}
-    <p class="link-text text-center">{text}</p>
+      <p class="link-text text-center">{text}</p>
     {/if}
   </a>
 </div>
@@ -40,9 +40,6 @@
   @media (max-width: 650px) {
     .link img {
       margin-right: 0px;
-    }
-    .link span {
-      display: none;
     }
   }
 </style>
