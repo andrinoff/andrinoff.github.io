@@ -48,7 +48,8 @@
             <div class="profile-text">
                 <h1 class="name-heading">Drew Smirnoff</h1>
                 <p class="bio">
-                    Software Engineer <span class="divider">|</span> Based in Tbilisi
+                    Full stack developer <span class="divider">|</span> Based in
+                    Tbilisi
                 </p>
             </div>
         </section>
