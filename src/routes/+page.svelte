@@ -18,7 +18,7 @@
     };
 
     // onMount is a Svelte lifecycle function that runs after the component is rendered.
-    // We use it to set up an interval to update the clock every second.
+    // We use it to set up an in.terval to update the clock every second.
     onMount(() => {
         // Set the initial time immediately
         currentTime = getTimeInTbilisi();
