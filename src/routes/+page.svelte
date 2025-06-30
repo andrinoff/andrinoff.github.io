@@ -1,39 +1,6 @@
 <script>
     import { onMount } from "svelte";
-
-    // State variable to hold the current time string.
-    let currentTime = "Loading...";
-
-    // Function to get and format the time for Tbilisi.
-    const getTimeInTbilisi = () => {
-        const options = {
-            timeZone: "Asia/Tbilisi",
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit",
-            hour12: true,
-        };
-        const formatter = new Intl.DateTimeFormat([], options);
-        return formatter.format(new Date());
-    };
-
-    // onMount is a Svelte lifecycle function that runs after the component is rendered.
-    // We use it to set up an in.terval to update the clock every second.
-    onMount(() => {
-        // Set the initial time immediately
-        currentTime = getTimeInTbilisi();
-
-        // Set up an interval to update the time every second
-        const timer = setInterval(() => {
-            currentTime = getTimeInTbilisi();
-        }, 1000);
-
-        // Cleanup function: this will run when the component is destroyed,
-        // preventing a memory leak.
-        return () => {
-            clearInterval(timer);
-        };
-    });
+    import Clock from "$lib/components/clock.svelte";
 </script>
 
 <div class="home-page-container">
@@ -57,12 +24,7 @@
         <hr class="card-divider" />
 
         <section class="dashboard-section">
-            <!-- Clock Component Area -->
-            <div class="clock-container">
-                <div class="tbilisi-text">TIME IN TBILISI</div>
-                <div class="clock-display">{currentTime}</div>
-            </div>
-
+            <Clock />
             <!-- Social Links Area -->
             <div class="links-wrapper">
                 <div class="link-grid">
