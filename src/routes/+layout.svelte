@@ -1,29 +1,28 @@
 <script>
-    import Links from "$lib/components/links.svelte";
+    import Header from "$lib/components/Header.svelte";
 </script>
 
-<div id="root">
-    <Links />
-</div>
-<hr />
-<slot />
+<Header />
+
+<main>
+    <slot />
+</main>
 
 <style>
-    #root {
-        display: flex;
-        justify-content: space-between;
-        margin: 10px;
-        border-radius: 10px;
+    :global(body) {
+        background-color: #0d1117;
+        color: #c9d1d9;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        margin: 0;
     }
-    @media (max-width: 620px) {
-        #root {
-            flex-direction: column;
-            align-items: center;
-        }
+    :global(.main-header) {
+        position: sticky;
+        top: 0;
+        z-index: 900; /* Ensures it stays on top of page content */
     }
 
-    hr {
-        width: 99%;
-        border: 1px solid #242424;
+    main {
+        padding: 1rem 2rem;
     }
 </style>
