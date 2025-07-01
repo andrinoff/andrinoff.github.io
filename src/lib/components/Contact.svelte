@@ -7,7 +7,7 @@
 
     async function handleSubmit() {
         status = "sending";
-        responseMessage = "";
+        responseMessage = "Sending...";
 
         try {
             const response = await fetch(
@@ -25,8 +25,7 @@
                 throw new Error(`Server responded with ${response.status}`);
             }
 
-            // Assuming the server sends back a JSON response
-            const result = await response.json();
+            await response.json();
 
             status = "success";
             responseMessage = "Message sent successfully! ✨";
@@ -44,36 +43,39 @@
 </script>
 
 <section class="contact-section">
-    <h2 class="contact-title">Contact Me</h2>
+    <h2 class="widget-title">~/contact</h2>
     <form class="contact-form" on:submit|preventDefault={handleSubmit}>
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">name</label>
             <input
                 type="text"
                 id="name"
                 required
                 bind:value={name}
                 disabled={status === "sending"}
+                placeholder="your_name"
             />
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">email</label>
             <input
                 type="email"
                 id="email"
                 required
                 bind:value={email}
                 disabled={status === "sending"}
+                placeholder="you@domain.com"
             />
         </div>
         <div class="form-group">
-            <label for="content">Message</label>
+            <label for="content">message</label>
             <textarea
                 id="content"
                 rows="5"
                 required
                 bind:value={content}
                 disabled={status === "sending"}
+                placeholder="Your message here..."
             ></textarea>
         </div>
 
@@ -83,50 +85,37 @@
             disabled={status === "sending"}
         >
             {#if status === "sending"}
-                Sending...
+                [ sending... ]
             {:else}
-                Send Message
+                [ submit ]
             {/if}
         </button>
 
-        {#if responseMessage}
+        {#if responseMessage && status !== "sending"}
             <p class="response-message {status}">{responseMessage}</p>
         {/if}
     </form>
 </section>
 
 <style>
-    /* Contact Section Styles - matching your page's aesthetic */
+    /* The component's root is now styled by the :global(.widget-card) class in the parent page */
     .contact-section {
-        width: 100%;
-        max-width: 900px;
-        background-color: #161b22;
-        border: 1px solid #30363d;
-        border-radius: 24px;
-        padding: 2.5rem;
-        animation: floatIn 0.8s ease-out 0.4s;
-        animation-fill-mode: backwards;
+        /* Inherits all widget-card styles from parent */
     }
 
-    @keyframes floatIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .contact-title {
-        font-size: 1.75rem;
-        font-weight: 600;
-        color: #c9d1d9;
+    .widget-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #88c0d0; /* Accent color for titles */
         margin-top: 0;
         margin-bottom: 1.5rem;
         padding-bottom: 0.75rem;
-        border-bottom: 1px solid #30363d;
+        border-bottom: 1px solid #4c566a;
+    }
+    /* Add a little shell prompt character to the title */
+    .widget-title::before {
+        content: "$ ";
+        color: #a3be8c; /* Green for prompt */
     }
 
     .contact-form {
@@ -143,16 +132,17 @@
     label {
         margin-bottom: 0.5rem;
         font-size: 1rem;
-        font-weight: 500;
-        color: #8b949e;
+        font-weight: 400;
+        color: #81a1c1; /* Lighter blue for subtext */
+        text-transform: lowercase;
     }
 
     input,
     textarea {
-        background-color: #0d1117;
-        color: #c9d1d9;
-        border: 1px solid #30363d;
-        border-radius: 8px;
+        background-color: #2e3440;
+        color: #d8dee9;
+        border: 1px solid #4c566a;
+        border-radius: 6px;
         padding: 0.75rem 1rem;
         font-size: 1rem;
         font-family: inherit;
@@ -161,11 +151,17 @@
             box-shadow 0.2s ease;
     }
 
+    input::placeholder,
+    textarea::placeholder {
+        color: #4c566a;
+        opacity: 1;
+    }
+
     input:focus,
     textarea:focus {
         outline: none;
-        border-color: #58a6ff;
-        box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
+        border-color: #88c0d0;
+        box-shadow: 0 0 0 2px rgba(136, 192, 208, 0.2);
     }
 
     textarea {
@@ -174,24 +170,28 @@
     }
 
     .submit-btn {
-        background-color: #333;
-        color: #ffffff;
-        font-weight: 600;
+        font-family: inherit;
+        background-color: #81a1c1;
+        color: #2e3440;
+        font-weight: 700;
         font-size: 1rem;
+        text-transform: lowercase;
         padding: 0.75rem;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
+        border: 1px solid #434c5e;
+        border-radius: 6px;
         cursor: pointer;
-        transition: background-color 0.2s ease;
+        transition: all 0.2s ease;
         margin-top: 0.5rem;
     }
 
     .submit-btn:hover:not(:disabled) {
-        background-color: #222;
+        background-color: #88c0d0;
+        border-color: #88c0d0;
+        color: #2e3440;
     }
 
     .submit-btn:disabled {
-        background-color: #111;
+        background-color: #434c5e;
         opacity: 0.6;
         cursor: not-allowed;
     }
@@ -202,27 +202,18 @@
         padding: 0.75rem;
         border-radius: 8px;
         font-weight: 500;
+        border: 1px solid;
     }
 
     .response-message.success {
-        background-color: rgba(46, 160, 67, 0.15);
-        color: #3fb950;
+        background-color: rgba(163, 190, 140, 0.1);
+        color: #a3be8c;
+        border-color: #a3be8c;
     }
 
     .response-message.error {
-        background-color: rgba(248, 81, 73, 0.15);
-        color: #f85149;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-        .contact-section {
-            padding: 2rem;
-        }
-    }
-    @media (max-width: 600px) {
-        .contact-section {
-            padding: 1.5rem;
-        }
+        background-color: rgba(191, 97, 106, 0.1);
+        color: #bf616a;
+        border-color: #bf616a;
     }
 </style>

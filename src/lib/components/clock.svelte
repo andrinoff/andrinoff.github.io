@@ -10,7 +10,8 @@
         const localTime = now.getTime();
         const localOffset = now.getTimezoneOffset() * 60000;
         const utc = localTime + localOffset;
-        const tbilisiOffset = 7 * 3600000;
+        // Corrected offset for Tbilisi (GMT+4)
+        const tbilisiOffset = 4 * 3600000;
         const tbilisiTime = new Date(utc + tbilisiOffset);
         return tbilisiTime;
     }
@@ -28,25 +29,13 @@
         clearInterval(interval);
     });
 
-    $: hours = time.getUTCHours().toString().padStart(2, "0");
+    $: hours = (time.getUTCHours() + 4).toString().padStart(2, "0");
     $: minutes = time.getUTCMinutes().toString().padStart(2, "0");
     $: seconds = time.getUTCSeconds().toString().padStart(2, "0");
 </script>
 
-<!--
-  svelte:head allows us to insert elements into the document's <head>.
-  Here, we're importing the 'Orbitron' font from Google Fonts to get a nice digital clock style.
--->
-<svelte:head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
-        rel="stylesheet"
-    />
-</svelte:head>
-
-<!-- HTML structure for the clock -->
+<!-- The component now assumes it will be placed inside a styled container,
+     so it only contains the clock elements themselves. -->
 <div class="clock-container">
     <div class="clock-face">
         <span class="time-part">{hours}</span>
@@ -59,80 +48,70 @@
 </div>
 
 <style>
+    /* The component is now unstyled by default, inheriting font from its parent.
+       This makes it a reusable "widget". */
     .clock-container {
         text-align: center;
-        color: #fff;
-        background: #14191f;
-        padding: 40px 60px;
-        border-radius: 25px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #eceff4; /* Brighter text for the clock time */
+        width: 100%;
     }
 
     .clock-face {
         display: flex;
         align-items: baseline;
         justify-content: center;
-        font-family: "Orbitron", sans-serif; /* Moved font-family here to apply to all children */
-        font-size: 5rem;
+        /* Inherits 'JetBrains Mono' from the global style */
+        font-family: inherit;
+        font-size: 3.5rem;
         font-weight: 700;
         line-height: 1;
+        color: #eceff4;
     }
 
     .time-part {
-        min-width: 120px;
+        min-width: 80px;
         text-align: center;
     }
 
     .separator {
-        font-size: 4rem;
-        animation: blink 1s infinite;
-        margin: 0 10px;
+        font-size: 3rem;
+        animation: blink 1.5s infinite;
+        margin: 0 5px;
         position: relative;
-        top: -5px;
+        top: -3px;
+        color: #88c0d0; /* Use theme accent color */
     }
 
     @keyframes blink {
         50% {
-            opacity: 0;
+            opacity: 0.3;
         }
     }
 
     .date-display {
-        margin-top: 20px;
-        font-size: 1.2rem;
+        margin-top: 1rem;
+        font-size: 1rem;
         font-weight: 400;
         letter-spacing: 1px;
-        color: #ccc;
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+        color: #81a1c1; /* Use theme subtext color */
     }
 
     /* --- Styles for Mobile Devices --- */
     @media (max-width: 600px) {
-        .clock-container {
-            /* Reduce padding for smaller screens */
-            padding: 25px 20px;
-            margin: 20px 15px; /* Add some horizontal margin */
-        }
-
         .clock-face {
-            /* Decrease the main clock font size */
-            font-size: 3rem;
+            font-size: 2.5rem;
         }
 
         .time-part {
-            /* Adjust min-width to fit the smaller font size */
-            min-width: 70px;
+            min-width: 55px;
         }
 
         .separator {
-            /* Scale down the separator font size */
-            font-size: 2.5rem;
-            margin: 0 5px; /* Reduce space around separators */
+            font-size: 2rem;
         }
 
         .date-display {
-            /* Make the date font size slightly smaller */
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
     }
 </style>

@@ -26,7 +26,6 @@
  * ```
  */
 declare module '$env/static/private' {
-	export const npm_config_host: string;
 	export const STARSHIP_SHELL: string;
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
@@ -118,7 +117,6 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		npm_config_host: string;
 		STARSHIP_SHELL: string;
 		TERM_PROGRAM: string;
 		NODE: string;
