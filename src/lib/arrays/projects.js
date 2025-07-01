@@ -39,6 +39,16 @@ let projects = [
     type: "backend",
   },
   {
+    name: "Email forwarding using iCloud+",
+    description:
+      "A serverless function, written in Go, that forwards an email recieved from an HTML form",
+    image:
+      "https://www.getmailbird.com/assets/components/phpthumbof/cache/setup-icloud-mail-on-mac.b3fca1d7ac68fb5753386b178522b571.webp",
+    tech: ["go", "vercel"],
+    link: "https://github.com/andrinoff/emails",
+    type: "backend",
+  },
+  {
     name: "Infinite Wordle",
     description:
       "A Wordle copy made for a technical interview, and finished afterwards.",
