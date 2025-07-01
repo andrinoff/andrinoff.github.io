@@ -26,12 +26,10 @@
  * ```
  */
 declare module '$env/static/private' {
-	export const NVM_RC_VERSION: string;
 	export const STARSHIP_SHELL: string;
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
-	export const NVM_CD_FLAGS: string;
 	export const SHELL: string;
 	export const TERM: string;
 	export const OMF_CONFIG: string;
@@ -44,7 +42,6 @@ declare module '$env/static/private' {
 	export const npm_config_noproxy: string;
 	export const npm_config_local_prefix: string;
 	export const USER: string;
-	export const NVM_DIR: string;
 	export const COMMAND_MODE: string;
 	export const npm_config_globalconfig: string;
 	export const SSH_AUTH_SOCK: string;
@@ -53,6 +50,7 @@ declare module '$env/static/private' {
 	export const PATH: string;
 	export const npm_package_json: string;
 	export const npm_config_engine_strict: string;
+	export const LaunchInstanceID: string;
 	export const npm_config_userconfig: string;
 	export const npm_config_init_module: string;
 	export const __CFBundleIdentifier: string;
@@ -82,6 +80,7 @@ declare module '$env/static/private' {
 	export const npm_config_user_agent: string;
 	export const HOMEBREW_CELLAR: string;
 	export const OSLogRateLimit: string;
+	export const SECURITYSESSIONID: string;
 	export const npm_node_execpath: string;
 	export const npm_config_prefix: string;
 	export const COLORTERM: string;
@@ -118,12 +117,10 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		NVM_RC_VERSION: string;
 		STARSHIP_SHELL: string;
 		TERM_PROGRAM: string;
 		NODE: string;
 		INIT_CWD: string;
-		NVM_CD_FLAGS: string;
 		SHELL: string;
 		TERM: string;
 		OMF_CONFIG: string;
@@ -136,7 +133,6 @@ declare module '$env/dynamic/private' {
 		npm_config_noproxy: string;
 		npm_config_local_prefix: string;
 		USER: string;
-		NVM_DIR: string;
 		COMMAND_MODE: string;
 		npm_config_globalconfig: string;
 		SSH_AUTH_SOCK: string;
@@ -145,6 +141,7 @@ declare module '$env/dynamic/private' {
 		PATH: string;
 		npm_package_json: string;
 		npm_config_engine_strict: string;
+		LaunchInstanceID: string;
 		npm_config_userconfig: string;
 		npm_config_init_module: string;
 		__CFBundleIdentifier: string;
@@ -174,6 +171,7 @@ declare module '$env/dynamic/private' {
 		npm_config_user_agent: string;
 		HOMEBREW_CELLAR: string;
 		OSLogRateLimit: string;
+		SECURITYSESSIONID: string;
 		npm_node_execpath: string;
 		npm_config_prefix: string;
 		COLORTERM: string;

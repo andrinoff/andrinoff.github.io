@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import Clock from "$lib/components/clock.svelte";
+    import Contact from "$lib/components/Contact.svelte";
 </script>
 
 <div class="home-page-container">
@@ -96,6 +97,7 @@
             </p>
         </div>
     </section>
+    <Contact></Contact>
 </div>
 
 <style>
@@ -350,10 +352,6 @@
         .avatar {
             width: 100px;
             height: 100px;
-        }
-
-        .clock-display {
-            font-size: 2rem;
         }
     }
 </style>
