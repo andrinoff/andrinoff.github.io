@@ -86,7 +86,7 @@
                     aria-label="LinkedIn"
                 >
                     <img
-                        src="https://cdn.simpleicons.org/linkedin/d8dee9"
+                        src="https://img.icons8.com/?size=100&id=447&format=png&color=d8dee9"
                         alt="LinkedIn"
                         class="social-link-image"
                     />
