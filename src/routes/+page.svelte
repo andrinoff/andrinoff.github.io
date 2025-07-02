@@ -24,7 +24,7 @@
         <hr class="card-divider" />
 
         <section class="dashboard-section">
-            <div class="widget-card clock-widget">
+            <div class="clock-widget">
                 <Clock />
             </div>
         </section>
@@ -185,25 +185,6 @@
         flex-direction: column;
         gap: 2rem; /* Gap between stacked windows */
     }
-
-    /* Widget Card Styles (The "Tiled Windows") */
-    :global(.widget-card) {
-        width: 100%;
-        background-color: rgba(
-            46,
-            52,
-            64,
-            0.75
-        ); /* Semi-transparent background */
-        border: 1px solid #4c566a;
-        border-radius: 8px;
-        padding: 2.5rem;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(10px); /* Frosted glass effect */
-        animation: floatIn 0.8s ease-out;
-        box-sizing: border-box; /* Ensures padding doesn't break layout */
-    }
-
     @keyframes floatIn {
         from {
             opacity: 0;

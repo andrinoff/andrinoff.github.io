@@ -59,22 +59,6 @@
         align-items: start;
     }
 
-    /* Use the same widget-card style from the homepage */
-    .widget-card {
-        width: 100%;
-        background-color: rgba(46, 52, 64, 0.75);
-        border: 1px solid #4c566a;
-        border-radius: 8px;
-        padding: 2.5rem;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(10px);
-        animation: floatIn 0.8s ease-out forwards;
-        opacity: 0;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-    }
-
     .widget-title {
         font-size: 1.5rem;
         font-weight: 700;
