@@ -139,12 +139,6 @@
             backdrop-filter 0.3s ease;
     }
 
-    .main-header.scrolled {
-        background-color: rgba(22, 27, 34, 0.8);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid #30363d;
-    }
-
     .header-container {
         display: flex;
         justify-content: center;
@@ -218,17 +212,8 @@
         transition:
             opacity 0.3s ease,
             visibility 0.3s ease,
-            background-color 0.3s ease,
-            /* Added transition for background-color */ backdrop-filter 0.3s
-                ease; /* Added transition for backdrop-filter */
+            background-color 0.3s ease;
     }
-
-    /* FIX: Apply scrolled styles to the overlay when the header is scrolled */
-    .main-header.scrolled + .mobile-nav-overlay {
-        background-color: rgba(22, 27, 34, 0.7);
-        backdrop-filter: blur(10px);
-    }
-
     .mobile-nav-overlay.is-open {
         opacity: 1;
         visibility: visible;
