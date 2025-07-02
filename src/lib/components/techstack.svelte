@@ -19,9 +19,10 @@
             if (!columnEl) return;
 
             const isScrollingDown = i % 2 === 0;
+            // Adjust scrollHeight calculation to account for the duplicated content for looping
             const scrollHeight = columnEl.scrollHeight / 3;
             let scrollTop = isScrollingDown ? 0 : scrollHeight;
-            const speed = 0.3 + Math.random() * 0.4; // Random speed for each column
+            const speed = 0.2 + Math.random() * 0.3; // Slightly slower and more consistent speed
 
             const animate = () => {
                 if (isScrollingDown) {
@@ -52,73 +53,70 @@
     });
 </script>
 
-<div class="tech-stack-container">
-    <h1 class="section-title">My Tech Stack</h1>
-    <div class="scroller-waterfall-container">
-        {#each columns as columnItems, i}
-            <div class="scroller-column">
-                <div class="scroller-content" bind:this={columnElements[i]}>
-                    {#each columnItems as item}
-                        <div class="tech-item" title={item.name}>
-                            <img
-                                src="https://cdn.simpleicons.org/{item.image}/white"
-                                alt="{item.name} icon"
-                                class="tech-icon"
-                            />
-                        </div>
-                    {/each}
-                </div>
+<!-- The component is now just the scroller itself, designed to be placed inside a .widget-card -->
+<h1 class="widget-title">~/tech-stack</h1>
+<div class="scroller-waterfall-container">
+    {#each columns as columnItems, i}
+        <div class="scroller-column">
+            <div class="scroller-content" bind:this={columnElements[i]}>
+                {#each columnItems as item}
+                    <div class="tech-item" title={item.name}>
+                        <img
+                            src="https://cdn.simpleicons.org/{item.image}/d8dee9"
+                            alt="{item.name} icon"
+                            class="tech-icon"
+                        />
+                    </div>
+                {/each}
             </div>
-        {/each}
-    </div>
+        </div>
+    {/each}
 </div>
 
 <style>
-    .tech-stack-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    /* This component is now self-contained and includes its own title */
+    .widget-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #88c0d0;
+        margin: 0 0 1.5rem 0;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #4c566a;
     }
 
-    .section-title {
-        /* Assuming this class is defined in a parent/global style */
-        /* If not, add styles here e.g.: */
-        font-size: 2rem;
-        color: #c9d1d9;
-        margin-bottom: 2rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid #30363d;
+    .widget-title::before {
+        content: "$ ";
+        color: #a3be8c;
     }
 
     .scroller-waterfall-container {
         display: flex;
         justify-content: center;
-        gap: 1.5rem;
-        height: 400px;
+        gap: 1rem;
+        height: 300px; /* Adjusted height */
         width: 100%;
-        max-width: 500px; /* Adjust width as needed */
         position: relative;
         overflow: hidden;
+        /* Updated mask for a smoother fade */
         -webkit-mask-image: linear-gradient(
             to bottom,
             transparent,
-            black 20%,
-            black 80%,
+            black 15%,
+            black 85%,
             transparent
         );
         mask-image: linear-gradient(
             to bottom,
             transparent,
-            black 20%,
-            black 80%,
+            black 15%,
+            black 85%,
             transparent
         );
     }
 
     .scroller-column {
         height: 100%;
-        width: 100px; /* Width of each column */
+        flex: 1; /* Allow columns to grow and shrink */
     }
 
     .scroller-content {
@@ -137,43 +135,43 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100px;
-        width: 100px;
-        background-color: #161b22;
-        border: 1px solid #30363d;
-        border-radius: 16px;
-        margin-bottom: 1.5rem;
+        height: 80px;
+        width: 100%; /* Take full width of the column */
+        background-color: transparent; /* Match the widget background */
+        border: 1px solid #434c5e;
+        border-radius: 8px;
+        margin-bottom: 1rem;
         transition:
             background-color 0.2s ease,
-            transform 0.2s ease;
+            border-color 0.2s ease;
     }
 
     .tech-item:hover {
-        background-color: #21262d;
-        transform: scale(1.05);
+        background-color: rgba(136, 192, 208, 0.1);
+        border-color: #88c0d0;
     }
 
     .tech-icon {
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
         opacity: 0.8;
+        transition: opacity 0.2s ease;
+    }
+
+    .tech-item:hover .tech-icon {
+        opacity: 1;
     }
 
     @media (max-width: 600px) {
         .scroller-waterfall-container {
-            gap: 1rem;
-            max-width: 100%;
-        }
-        .scroller-column {
-            width: 80px;
+            gap: 0.75rem;
         }
         .tech-item {
-            width: 80px;
-            height: 80px;
+            height: 70px;
         }
         .tech-icon {
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
         }
     }
 </style>
