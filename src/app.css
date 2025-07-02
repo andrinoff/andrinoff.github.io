@@ -10,11 +10,11 @@
     backdrop-filter: blur(10px); /* Frosted glass effect */
     animation: floatIn 0.8s ease-out;
     box-sizing: border-box; /* Ensures padding doesn't break layout */
+    transition: transform 0.5s ease;
 }
 
 .widget-card:hover {
     transform: scale(1.02);
-    transition: transform 0.5s ease;
 }
 
 @keyframes floatIn {
