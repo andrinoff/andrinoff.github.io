@@ -1,5 +1,5 @@
 <script>
-    import Clock from "$lib/components/clock.svelte";
+    import Clock from "$lib/components/Clock.svelte";
     import ContactForm from "$lib/components/Contact.svelte";
 </script>
 

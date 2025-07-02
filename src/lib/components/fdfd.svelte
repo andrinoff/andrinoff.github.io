@@ -1,3 +1,5 @@
+<!-- Mock change -->
+
 <script>
     import { onMount, onDestroy } from "svelte";
 
@@ -29,7 +31,7 @@
         clearInterval(interval);
     });
 
-    $: hours = (time.getUTCHours()).toString().padStart(2, "0");
+    $: hours = time.getUTCHours().toString().padStart(2, "0");
     $: minutes = time.getUTCMinutes().toString().padStart(2, "0");
     $: seconds = time.getUTCSeconds().toString().padStart(2, "0");
 </script>
