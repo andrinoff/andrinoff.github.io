@@ -1,3 +1,5 @@
+<!-- Mock change -->
+
 <script>
     import { onMount, onDestroy } from "svelte";
     import items from "$lib/arrays/items.js";
