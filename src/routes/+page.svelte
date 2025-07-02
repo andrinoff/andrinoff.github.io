@@ -185,16 +185,6 @@
         flex-direction: column;
         gap: 2rem; /* Gap between stacked windows */
     }
-    @keyframes floatIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
 
     .hero-card {
         display: flex;

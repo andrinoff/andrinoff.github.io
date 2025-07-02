@@ -6,10 +6,7 @@
 
 <div class="projects-page-container">
     {#each types as type, typeIndex}
-        <section
-            class="widget-card"
-            style="animation-delay: {typeIndex * 150 + 100}ms"
-        >
+        <section class="widget-card">
             <h1 class="widget-title">~/projects/{type}</h1>
             <div class="projects-list">
                 {#each projects.filter((p) => p.type === type) as project}
@@ -131,18 +128,6 @@
         width: 20px;
         height: 20px;
         opacity: 0.6;
-    }
-
-    /* Keyframes for the animation */
-    @keyframes floatIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
 
     @media (max-width: 600px) {

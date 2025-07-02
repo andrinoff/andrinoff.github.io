@@ -102,20 +102,6 @@
         gap: 2rem;
     }
 
-    /* Staggered animation for the widgets */
-    .main-content .widget-card:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-    .main-content .widget-card:nth-child(2) {
-        animation-delay: 0.2s;
-    }
-    .sidebar .widget-card:nth-child(1) {
-        animation-delay: 0.3s;
-    }
-    .sidebar .widget-card:nth-child(2) {
-        animation-delay: 0.4s;
-    }
-
     .widget-title {
         font-size: 1.5rem;
         font-weight: 700;
@@ -207,18 +193,6 @@
     .styled-link:hover {
         color: #88c0d0;
         border-bottom-color: #88c0d0;
-    }
-
-    /* Keyframes for the animation */
-    @keyframes floatIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
 
     /* Responsive Styles */
