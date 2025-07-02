@@ -11,7 +11,7 @@
         const localOffset = now.getTimezoneOffset() * 60000;
         const utc = localTime + localOffset;
         // Corrected offset for Tbilisi (GMT+4)
-        const tbilisiOffset = 4 * 3600000;
+        const tbilisiOffset = 8 * 3600000;
         const tbilisiTime = new Date(utc + tbilisiOffset);
         return tbilisiTime;
     }
@@ -29,7 +29,7 @@
         clearInterval(interval);
     });
 
-    $: hours = (time.getUTCHours() + 4).toString().padStart(2, "0");
+    $: hours = (time.getUTCHours()).toString().padStart(2, "0");
     $: minutes = time.getUTCMinutes().toString().padStart(2, "0");
     $: seconds = time.getUTCSeconds().toString().padStart(2, "0");
 </script>
