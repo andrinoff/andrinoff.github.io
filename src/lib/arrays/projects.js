@@ -3,8 +3,6 @@ let projects = [
     name: "Work Progress",
     description:
       "A VS Code extension that shows your work progress in a nice way.",
-    image:
-      "https://github.com/andrinoff/work-progress.github.io/blob/master/icon.png?raw=true",
     tech: ["typescript", "vscodium"],
     link: "https://github.com/andrinoff/work-progress",
     type: "fullstack",
@@ -13,7 +11,6 @@ let projects = [
     name: "Anglobotik",
     description:
       "A Telegram bot that helps you mock an English writing exam.",
-    image: "https://github.com/andrinoff/anglobotik/raw/main/docs/icon.jpg",
     tech: ["python", "telegram", "openai"],
     link: "https://github.com/andrinoff/anglobotik",
     type: "backend",
@@ -22,8 +19,6 @@ let projects = [
     name: "Bot API",
     description:
       "A customizable API that sends your message in different channels.",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXbI9dX4sO8hm_qoSSXy0QNpDNshfdoiQ1KA&s",
     tech: ["vercel", "go"],
     link: "https://github.com/andrinoff/bot-api",
     type: "backend",
@@ -32,8 +27,6 @@ let projects = [
     name: "Organization Auto-Join",
     description:
       "An API that automatically invites you to a set organization team.",
-    image:
-      "https://freepnglogo.com/images/all_img/github-white-logo-d748.png",
     tech: ["javascript", "vercel", "github"],
     link: "https://github.com/andrinoff/org-auto-invite",
     type: "backend",
@@ -42,8 +35,6 @@ let projects = [
     name: "Email forwarding using iCloud+",
     description:
       "A serverless function, written in Go, that forwards an email recieved from an HTML form",
-    image:
-      "https://www.getmailbird.com/assets/components/phpthumbof/cache/setup-icloud-mail-on-mac.b3fca1d7ac68fb5753386b178522b571.webp",
     tech: ["go", "vercel"],
     link: "https://github.com/andrinoff/emails",
     type: "backend",
@@ -52,7 +43,6 @@ let projects = [
     name: "Infinite Wordle",
     description:
       "A Wordle copy made for a technical interview, and finished afterwards.",
-    image: "https://i.imgur.com/3UTklGw.png",
     tech: ["html5", "javascript", "css"],
     link: "https://wordle.andrinoff.com",
     type: "fullstack",
@@ -60,7 +50,6 @@ let projects = [
   {
     name: "Liquid Simulator",
     description: "A liquid metal simulation built with WebGL.",
-    image: "https://i.imgur.com/gDcUQuD.png",
     tech: ["javascript", "webgl", "c"],
     link: "https://github.com/andrinoff/liquid-metal",
     type: "other",
@@ -68,7 +57,6 @@ let projects = [
   {
     name: "Particles",
     description: "A GPU-accelerated particle simulation using WebGL.",
-    image: "https://i.imgur.com/NK8q0wX.png",
     tech: ["javascript", "webgl", "c"],
     link: "https://github.com/andrinoff/particles",
     type: "other",
@@ -77,7 +65,6 @@ let projects = [
     name: "Tesseract",
     description:
       "A 4D hypercube (tesseract) rendered in 3D space with WebGL.",
-    image: "https://i.imgur.com/XCDG3aY.png",
     tech: ["javascript", "webgl"],
     link: "https://github.com/andrinoff/hypercube",
     type: "other",

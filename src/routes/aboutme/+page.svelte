@@ -1,5 +1,5 @@
 <script>
-    import Techstack from "$lib/components/techstack.svelte";
+    import Techstack from "$lib/components/Techstack.svelte";
 </script>
 
 <div class="about-page-container">
