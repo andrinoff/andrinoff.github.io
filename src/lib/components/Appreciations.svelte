@@ -2,9 +2,8 @@
     import { onMount, onDestroy } from "svelte";
 
     // --- Component State ---
-    let scrollerElement; // This will hold the reference to the scroller div
+    let scrollerElement;
     let isHovering = false;
-    let inactivityTimer = null;
     let animationFrameId = null;
 
     // State for smooth scrolling
@@ -13,51 +12,50 @@
     let lastTouchY = 0;
     let isTouching = false;
 
-    // --- Data ---
-    const appreciationMessages = [
-        {
-            quote: "Inspirational, dedicated. We were lucky to have him.",
-            source: "Old boss (Giorgi)",
-        },
-        {
-            quote: "I've learned more from Drew in the last year than I have in the rest of my education. His guidance is invaluable.",
-            source: "A Mentee (Alexandr)",
-        },
-        {
-            quote: "I have watched Drew grow as a developer and I can't describe, how better he became. What took me 2 years, takes him 2 months",
-            source: "A Friend, Senior Fullstack Developer",
-        },
-        {
-            quote: "Drew's vision and leadership have been the driving force behind our recent successes. An absolute pleasure to work with.",
-            source: "A Grateful Colleague (Brad)",
-        },
-        {
-            quote: "His ability to solve complex problems under short time is simply unmatched. He's the calm in the storm",
-            source: "A Project Manager",
-        },
-        {
-            quote: "Always willing to lend a hand, no matter how busy he is. A true team player.",
-            source: "A colleague (Lisa)",
-        },
-    ];
-
-    // Duplicate the array for a seamless infinite scroll effect
-    const messagesToDisplay = [
-        ...appreciationMessages,
-        ...appreciationMessages,
-    ];
+    // --- Data State (Now dynamic) ---
+    let appreciations = [];
+    let isLoading = true;
+    let fetchError = null;
 
     // --- Logic ---
-    onMount(() => {
+    onMount(async () => {
+        // Fetch data from our new API endpoint
+        try {
+            const response = await fetch(
+                "https://appreciations.andrinoff.com/api/get_appreciations",
+            );
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(
+                    errorData.details || "Failed to fetch appreciations",
+                );
+            }
+            const data = await response.json();
+
+            // Map the database fields (text, author_name) to the component's expected fields (quote, source)
+            appreciations = data.map((item) => ({
+                quote: item.text,
+                source: item.author_name || "Anonymous", // Provide a default for anonymous entries
+            }));
+        } catch (err) {
+            fetchError = err.message;
+            console.error("Fetch Error:", err);
+        } finally {
+            isLoading = false;
+        }
+
         // Start the main animation loop
         animationFrameId = requestAnimationFrame(runSmoothScroll);
 
         // Cleanup when the component is destroyed
         return () => {
-            if (inactivityTimer) clearTimeout(inactivityTimer);
             if (animationFrameId) cancelAnimationFrame(animationFrameId);
         };
     });
+
+    // Reactive statement to duplicate the array for a seamless infinite scroll effect
+    $: messagesToDisplay =
+        appreciations.length > 0 ? [...appreciations, ...appreciations] : [];
 
     function runSmoothScroll() {
         if (!scrollerElement) {
@@ -65,61 +63,45 @@
             return;
         }
 
-        // Auto-scroll logic: only increments the target when not paused
         if (!isHovering && !isTouching) {
-            targetScroll += 0.4; // Constant speed for autoscroll
+            targetScroll += 0.4;
         }
 
-        // Smooth scrolling interpolation (lerp)
-        // The current scroll position smoothly "chases" the target position.
-        const smoothness = 0.1; // Lower is smoother
+        const smoothness = 0.1;
         currentScroll += (targetScroll - currentScroll) * smoothness;
 
-        // Seamless loop logic
         const scrollHeight = scrollerElement.scrollHeight / 2;
-        if (currentScroll >= scrollHeight) {
-            // When we pass the halfway point, teleport back to the start
+        if (currentScroll >= scrollHeight && scrollHeight > 0) {
             const diff = currentScroll - scrollHeight;
             currentScroll = diff;
             targetScroll = diff;
         }
 
-        // Apply the final, smooth scroll position
         scrollerElement.scrollTop = currentScroll;
-
-        // Continue the loop
         animationFrameId = requestAnimationFrame(runSmoothScroll);
     }
 
-    // --- Event Handlers ---
+    // --- Event Handlers (No changes needed here) ---
     function handleWheel(event) {
-        // Prevent default browser scroll to take full control
         event.preventDefault();
-        // Add the wheel delta to the target scroll position
         targetScroll += event.deltaY;
     }
-
     function handleMouseEnter() {
         isHovering = true;
     }
-
     function handleMouseLeave() {
         isHovering = false;
     }
-
     function handleTouchStart(event) {
         isTouching = true;
         lastTouchY = event.touches[0].clientY;
     }
-
     function handleTouchMove(event) {
         if (!isTouching) return;
         const deltaY = event.touches[0].clientY - lastTouchY;
         lastTouchY = event.touches[0].clientY;
-        // Move the target scroll in the opposite direction of the touch
         targetScroll -= deltaY;
     }
-
     function handleTouchEnd() {
         isTouching = false;
     }
@@ -127,25 +109,42 @@
 
 <main class="widget-card">
     <h1 class="widget-title">~/appreciations.log</h1>
-    <div
-        class="scroller"
-        bind:this={scrollerElement}
-        on:mouseenter={handleMouseEnter}
-        on:mouseleave={handleMouseLeave}
-        on:wheel|preventDefault={handleWheel}
-        on:touchstart|passive={handleTouchStart}
-        on:touchmove|passive={handleTouchMove}
-        on:touchend|passive={handleTouchEnd}
-    >
-        <div class="scroller-inner">
-            {#each messagesToDisplay as msg, i (i)}
-                <div class="appreciation-item">
-                    <p class="quote">"{msg.quote}"</p>
-                    <p class="source">- {msg.source}</p>
-                </div>
-            {/each}
+
+    <!-- Conditional rendering based on fetch status -->
+    {#if isLoading}
+        <div class="status-message">
+            <span>Loading appreciations...</span>
         </div>
-    </div>
+    {:else if fetchError}
+        <div class="status-message error">
+            <span>Error: {fetchError}</span>
+        </div>
+    {:else if messagesToDisplay.length === 0}
+        <div class="status-message">
+            <span>No appreciations yet. Be the first to add one!</span>
+        </div>
+    {:else}
+        <!-- The scroller, only shown when data is successfully loaded -->
+        <div
+            class="scroller"
+            bind:this={scrollerElement}
+            on:mouseenter={handleMouseEnter}
+            on:mouseleave={handleMouseLeave}
+            on:wheel|preventDefault={handleWheel}
+            on:touchstart|passive={handleTouchStart}
+            on:touchmove|passive={handleTouchMove}
+            on:touchend|passive={handleTouchEnd}
+        >
+            <div class="scroller-inner">
+                {#each messagesToDisplay as msg, i (i)}
+                    <div class="appreciation-item">
+                        <p class="quote">"{msg.quote}"</p>
+                        <p class="source">- {msg.source}</p>
+                    </div>
+                {/each}
+            </div>
+        </div>
+    {/if}
 </main>
 
 <style>
@@ -182,10 +181,22 @@
         color: #a3be8c;
     }
 
+    /* New styles for loading/error messages */
+    .status-message {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #d8dee9;
+        font-style: italic;
+    }
+    .status-message.error {
+        color: #bf616a;
+    }
+
     /* Scroller styles */
     .scroller {
         height: 100%;
-        /* We handle scrolling via JS, so hide the native scrollbar */
         overflow-y: hidden;
         position: relative;
         -webkit-mask-image: linear-gradient(
@@ -208,7 +219,6 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        /* We are now setting the position via JS */
         position: relative;
     }
 
