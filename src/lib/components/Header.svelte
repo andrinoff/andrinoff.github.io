@@ -139,6 +139,10 @@
             backdrop-filter 0.3s ease;
     }
 
+    .main-header.scrolled {
+        background-color: rgba(13, 17, 23, 0.75);
+    }
+
     .header-container {
         display: flex;
         justify-content: center;
@@ -146,6 +150,7 @@
         width: 100%;
         padding: 1rem 2rem;
         position: relative;
+        /* Removed solid background to allow backdrop-filter to work */
     }
 
     .desktop-nav {
