@@ -1,5 +1,6 @@
 <script>
     import Techstack from "$lib/components/Techstack.svelte";
+    import Appreciations from "$lib/components/Appreciations.svelte";
 </script>
 
 <div class="about-page-container">
@@ -73,14 +74,9 @@
                     rel="noopener noreferrer"
                     class="styled-link">View my CV</a
                 >
-                <a
-                    href="https://andrinoff.com/appreciations"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="styled-link">Read Appreciations</a
-                >
             </div>
         </section>
+        <Appreciations></Appreciations>
     </div>
 </div>
 

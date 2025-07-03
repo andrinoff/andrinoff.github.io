@@ -27,9 +27,12 @@
             <div class="clock-widget">
                 <Clock />
             </div>
+            <hr class="card-divider mt-10" />
         </section>
-        <!-- Contact Form Section -->
-        <ContactForm />
+        <div class="mt-46">
+            <!-- Contact Form Section -->
+            <ContactForm />
+        </div>
     </div>
 
     <!-- "Stack" Pane - A column for other widgets -->
