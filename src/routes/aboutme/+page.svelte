@@ -74,6 +74,12 @@
                     rel="noopener noreferrer"
                     class="styled-link">View my CV</a
                 >
+                <a
+                    href="https://music.andrinoff.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="styled-link">Music</a
+                >
             </div>
         </section>
         <Appreciations></Appreciations>
