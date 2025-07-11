@@ -1,5 +1,13 @@
 {
-	"/": [],
-	"/aboutme": [],
-	"/projects": []
+	"/": [
+		"src/routes/+page.js",
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/aboutme": [
+		"src/routes/+layout.js"
+	],
+	"/projects": [
+		"src/routes/+layout.js"
+	]
 }
