@@ -1,65 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300&display=swap"
-            rel="stylesheet"
-        />
-        <meta property="description" content="Drew Smirnoff" />
-        <meta
-            property="og:image"
-            content="https://avatars.githubusercontent.com/u/175145001?v=4"
-        />
-        <meta property="og:site_name" content="Drew Smirnoff" />
-        <meta property="og:description" content="Drew Smirnoff" />
-        <meta property="og:title" content="Drew Smirnoff" />
-        <title>Drew Smirnoff</title>
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="https://avatars.githubusercontent.com/u/175145001?v=4"
-        />
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="description" content="Drew Smirnoff" />
+    <meta
+      property="og:image"
+      content="https://avatars.githubusercontent.com/u/175145001?v=4"
+    />
+    <meta property="og:site_name" content="Drew Smirnoff" />
+    <meta property="og:description" content="Drew Smirnoff" />
+    <meta property="og:title" content="Drew Smirnoff" />
+    <title>Drew Smirnoff</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://avatars.githubusercontent.com/u/175145001?v=4"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-        %sveltekit.head%
-    </head>
-    <body data-sveltekit-preload-data="hover">
-        <!-- Hidden Mastodon link for verification -->
-        <a
-            rel="me"
-            href="https://mastodon.social/@andrinoff"
-            style="display: none"
-            >Mastodon</a
-        >
-        <div id="root">%sveltekit.body%</div>
-        <style>
-            :root {
-                background-color: #14191f;
-                color: white;
-            }
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <!-- Hidden Mastodon link for verification -->
+    <a rel="me" href="https://fosstodon.org/@andrinoff" style="display: none"
+      >Mastodon</a
+    >
+    <div id="root">%sveltekit.body%</div>
+    <style>
+      :root {
+        background-color: #14191f;
+        color: white;
+      }
 
-            * {
-                font-family: "Funnel Display", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: 300;
-                font-style: normal;
-            }
+      * {
+        font-family: "Funnel Display", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+      }
 
-            #root {
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                margin: 0;
-            }
+      #root {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
 
-            #content {
-                flex: 1;
-            }
-        </style>
-    </body>
+      #content {
+        flex: 1;
+      }
+    </style>
+  </body>
 </html>
