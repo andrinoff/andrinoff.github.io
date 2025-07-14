@@ -9,7 +9,7 @@
   <div class="widget-card hero-card">
     <section class="profile-section">
       <img
-        src="https://tbilisi.hackclub.com/drew/avatar.png"
+        src="https://tbilisi.hackclub.com/assets/assets/team/drew.png"
         alt="Drew Smirnoff's Avatar"
         class="avatar"
       />
