@@ -2,35 +2,35 @@
   <div class="content-wrapper">
     <h1>Support My Work</h1>
     <p>
-      If you enjoy my code and find it valuable, please consider supporting
-      me. Your contribution helps me dedicate more time to creating and sharing.
+      If you enjoy my code and find it valuable, please consider supporting me.
+      Your contribution helps me dedicate more time to creating and sharing.
       Thank you for your generosity!
     </p>
 
     <div class="sponsor-options">
       <!-- Ko-fi Card -->
       <a
-        href="https://ko-fi.com/YOUR_USERNAME"
+        href="https://ko-fi.com/andrinoff"
         target="_blank"
         rel="noopener noreferrer"
         class="sponsor-card kofi"
       >
         <img
-          src="https://www.vectorlogo.zone/logos/ko-fi/ko-fi-icon.svg"
+          src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2V3cXAydjhwdGtqNjBhcjM0cWdzcW91emh1cHBtcW1nMHhnbDJhcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/s7kSWFyMM4NjRW0Rer/giphy.gif"
           alt="Ko-fi Logo"
         />
-        <span>Buy me a coffee</span>
+        <span>Buy me a Ko-Fi</span>
       </a>
 
       <!-- Patreon Card -->
       <a
-        href="https://patreon.com/YOUR_USERNAME"
+        href="https://patreon.com/andrinoff"
         target="_blank"
         rel="noopener noreferrer"
         class="sponsor-card patreon"
       >
         <img
-          src="https://www.vectorlogo.zone/logos/patreon/patreon-icon.svg"
+          src="https://www.freepnglogos.com/uploads/patreon-logo-png/white-patreon-logo-30.png"
           alt="Patreon Logo"
         />
         <span>Become a Patron</span>
@@ -38,13 +38,13 @@
 
       <!-- PayPal Card -->
       <a
-        href="https://paypal.me/YOUR_USERNAME"
+        href="https://paypal.me/andrinoff"
         target="_blank"
         rel="noopener noreferrer"
         class="sponsor-card paypal"
       >
         <img
-          src="https://www.vectorlogo.zone/logos/paypal/paypal-icon.svg"
+          src="https://www.edigitalagency.com.au/wp-content/uploads/PayPal-logo-white-png-vertical-900x838.png"
           alt="PayPal Logo"
         />
         <span>Donate with PayPal</span>
@@ -133,8 +133,6 @@
   .sponsor-card img {
     margin-bottom: 1rem;
     height: 40px;
-    /* This filter makes the icons white, which is perfect for dark/colored backgrounds */
-    filter: brightness(0) invert(1);
   }
 
   .sponsor-card span {
