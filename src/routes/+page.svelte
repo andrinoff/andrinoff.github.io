@@ -37,9 +37,12 @@
 
   <!-- "Stack" Pane - A column for other widgets -->
   <div class="main-stack">
-    <section class = "widget-card">
+  <section class="widget-card sponsor-section">
+    <h2 class="widget-title">~/sponsor</h2>
     <Sponsor />
-    </section>
+  </section>
+
+
 
     <!-- Social Links Section -->
 
@@ -67,6 +70,15 @@
 </div>
 
 <style>
+  
+  :global(html) {
+    box-sizing: border-box;
+  }
+
+  :global(*, *::before, *::after) {
+    box-sizing: inherit;
+  }
+
   /* Import a monospaced font for the "riced" look */
   @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap");
 
@@ -236,7 +248,26 @@
     width: 24px;
     height: 24px;
   }
+  .sponsor-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center the content */
+    justify-content: center; /* Vertically center the content */
+  }
+  :global(.sponsor-section a) {
+    display: block;
+    transition: transform 0.3s ease;
+  }
 
+  :global(.sponsor-section a:hover) {
+    transform: scale(1.05); /* Adds a slight zoom effect on hover */
+  }
+
+  :global(.sponsor-section img) {
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto;
+    display: block;
+  }
   /* Social Links Widget Styles */
   .social-links {
     display: flex;
