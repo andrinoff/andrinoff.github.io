@@ -16,7 +16,7 @@
                         <div class="timeline-line"></div>
                     </div>
                     <div class="timeline-content">
-                        <p class="job-title">Studio Fullstack Engineer</p>
+                        <p class="job-title">Fullstack Engineer</p>
                         <p class="job-period">2023 - 2024</p>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     </div>
                     <div class="timeline-content">
                         <p class="job-title">
-                            Freemoviesfull.cc Backend Engineer
+                            Backend Engineer
                         </p>
                         <p class="job-period">2024 - 2025</p>
                     </div>
@@ -40,7 +40,7 @@
                         <!-- No line on the last item -->
                     </div>
                     <div class="timeline-content">
-                        <p class="job-title">Freelance Fullstack Engineer</p>
+                        <p class="job-title">Freelance</p>
                         <p class="job-period">2022 - Present</p>
                     </div>
                 </div>
@@ -93,7 +93,6 @@
         gap: 2rem;
         width: 100%;
         max-width: 1200px;
-        margin: 0 auto;
         align-items: start;
     }
 
@@ -138,7 +137,6 @@
     .timeline {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
     }
     .timeline-item {
         display: flex;
@@ -149,11 +147,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 4px; /* Align dot with text */
+        margin-top: 6px; /* Align dot with text */
     }
     .timeline-dot {
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
         background-color: #88c0d0;
         border-radius: 50%;
         flex-shrink: 0;
@@ -163,7 +161,7 @@
         width: 2px;
         background-color: #4c566a;
         flex-grow: 1;
-        min-height: 50px;
+        min-height: 55px;
     }
     .job-title {
         font-size: 1.1rem;
