@@ -51,10 +51,6 @@
 </div>
 
 <style>
-  /* TEMP FIX */
-  * {
-    scale: 0.9;
-  }
   .sponsor-container {
     display: flex;
     flex-direction: column;
