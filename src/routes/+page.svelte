@@ -1,8 +1,7 @@
 <script>
   import Clock from "$lib/components/Clock.svelte";
   import ContactForm from "$lib/components/Contact.svelte";
-
-  export let data;
+  import Sponsor from "$lib/components/Sponsor.svelte";
 </script>
 
 <div class="home-page-container">
@@ -10,7 +9,7 @@
   <div class="widget-card hero-card">
     <section class="profile-section">
       <img
-        src="https://tbilisi.hackclub.com/drew/avatar.png"
+        src="https://tbilisi.hackclub.com/assets/assets/team/drew.png"
         alt="Drew Smirnoff's Avatar"
         class="avatar"
       />
@@ -30,7 +29,7 @@
       </div>
       <hr class="card-divider mt-10" />
     </section>
-    <div class="mt-46">
+    <div class="">
       <!-- Contact Form Section -->
       <ContactForm />
     </div>
@@ -38,102 +37,14 @@
 
   <!-- "Stack" Pane - A column for other widgets -->
   <div class="main-stack">
-    <!-- Navigation Links Section -->
-    <section class="widget-card nav-widget">
-      <h2 class="widget-title">~/navigation</h2>
-      <div class="nav-links">
-        <a href="/" class="nav-link">
-          <img
-            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/4c0390f6c9a91b83f3ae6da9d5b5a75181472fd0_home_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
-            alt="Home"
-          />
-          <span>Home</span>
-        </a>
-        <a href="/aboutme" class="nav-link">
-          <img
-            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/978be0e162f6aebd63c1237006f065030a90264e_person_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
-            alt="About"
-          />
-          <span>About</span>
-        </a>
-        <a href="/projects" class="nav-link">
-          <img
-            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/7b8b6bf02ed987b0e68ce5c2814ea408d666caf5_folder_code_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
-            alt="Projects"
-          />
-          <span>Projects</span>
-        </a>
-        <a
-          href="https://github.com/andrinoff"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="nav-link"
-        >
-          <img
-            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/f202b6faccfd5cc46299b976c2635fee60b55aa0_github-mark-white.svg"
-            alt="Github"
-          />
-          <span>Github</span>
-        </a>
-      </div>
-    </section>
+  <section class="widget-card sponsor-section">
+    <h2 class="widget-title">~/sponsor</h2>
+    <Sponsor />
+  </section>
+
+
 
     <!-- Social Links Section -->
-    <section class="widget-card social-widget">
-      <h2 class="widget-title">~/socials</h2>
-      <div class="social-links">
-        <a
-          href="https://linkedin.com/in/andrinoff"
-          class="social-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-        >
-          <img
-            src="https://img.icons8.com/?size=100&id=447&format=png&color=d8dee9"
-            alt="LinkedIn"
-            class="social-link-image"
-          />
-        </a>
-        <a
-          href="mailto:business@andrinoff.com"
-          class="social-link"
-          aria-label="Email"
-        >
-          <img
-            src="https://cdn.simpleicons.org/gmail/d8dee9"
-            alt="Email"
-            class="social-link-image"
-          />
-        </a>
-        <a
-          href="https://t.me/andrinoff"
-          class="social-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Telegram"
-        >
-          <img
-            src="https://cdn.simpleicons.org/telegram/d8dee9"
-            alt="Telegram"
-            class="social-link-image"
-          />
-        </a>
-        <a
-          href="https://instagram.com/andrinoff.dev"
-          class="social-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          <img
-            src="https://cdn.simpleicons.org/instagram/d8dee9"
-            alt="Instagram"
-            class="social-link-image"
-          />
-        </a>
-      </div>
-    </section>
 
     <!-- Biography Section -->
     <section class="widget-card biography-section">
@@ -159,6 +70,15 @@
 </div>
 
 <style>
+  
+  :global(html) {
+    box-sizing: border-box;
+  }
+
+  :global(*, *::before, *::after) {
+    box-sizing: inherit;
+  }
+
   /* Import a monospaced font for the "riced" look */
   @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap");
 
@@ -175,7 +95,7 @@
   /* Hyprland-style Tiling Layout Container */
   .home-page-container {
     display: grid;
-    grid-template-columns: 1.5fr 1fr; /* Master and stack layout */
+    grid-template-columns: 1.5fr 1.5fr; /* Master and stack layout */
     align-items: start;
     gap: 2rem; /* The "gap" between tiled windows */
     width: 100%;
@@ -328,7 +248,26 @@
     width: 24px;
     height: 24px;
   }
+  .sponsor-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center the content */
+    justify-content: center; /* Vertically center the content */
+  }
+  :global(.sponsor-section a) {
+    display: block;
+    transition: transform 0.3s ease;
+  }
 
+  :global(.sponsor-section a:hover) {
+    transform: scale(1.05); /* Adds a slight zoom effect on hover */
+  }
+
+  :global(.sponsor-section img) {
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto;
+    display: block;
+  }
   /* Social Links Widget Styles */
   .social-links {
     display: flex;
