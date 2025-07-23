@@ -1,14 +1,13 @@
 <div class="sponsor-container">
   <div class="content-wrapper">
-    <h1>Support My Work</h1>
-    <p>
+    <h1 id = "support">Support My Work</h1>
+    <p class="sponsor-description">
       If you enjoy my code and find it valuable, please consider supporting me.
       Your contribution helps me dedicate more time to creating and sharing.
       Thank you for your generosity!
     </p>
 
     <div class="sponsor-options">
-      <!-- Ko-fi Card -->
       <a
         href="https://ko-fi.com/andrinoff"
         target="_blank"
@@ -22,7 +21,6 @@
         <span>Buy me a Ko-Fi</span>
       </a>
 
-      <!-- Patreon Card -->
       <a
         href="https://patreon.com/andrinoff"
         target="_blank"
@@ -36,7 +34,6 @@
         <span>Become a Patron</span>
       </a>
 
-      <!-- PayPal Card -->
       <a
         href="https://paypal.me/andrinoff"
         target="_blank"
@@ -62,81 +59,113 @@
     text-align: center;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    color: #d1d5db; /* Default light text color */
+    color: #d1d5db;
+    padding: 1.5rem;
   }
 
   .content-wrapper {
     max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #f9fafb; /* White heading */
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem; /* Increased margin to compensate for removed <p> */
+    color: #f9fafb;
+    display: none; /* Hide on mobile */
   }
 
-  p {
-    font-size: 1.125rem;
-    color: #9ca3af; /* Lighter gray for paragraph */
-    margin-bottom: 2.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  /* Hide description and button text by default (on mobile) */
+  .sponsor-description {
+    display: none;
+  }
+
+  .sponsor-card span {
+    display: none;
   }
 
   .sponsor-options {
     display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
+    flex-direction: row; /* Horizontal layout for icons */
     justify-content: center;
-  }
-
-  /* Responsive grid for wider screens */
-  @media (min-width: 640px) {
-    .sponsor-options {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
+    gap: 1rem;
+    width: 100%;
   }
 
   .sponsor-card {
-    width: 150px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem 1.5rem;
     border-radius: 12px;
     text-decoration: none;
     transition:
       transform 0.2s ease-in-out,
       box-shadow 0.2s ease-in-out;
-    color: white;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Styles for compact icon buttons */
+    width: 70px;
+    height: 70px;
+    padding: 0;
   }
 
   .sponsor-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.2);
   }
 
-  /* Specific brand colors for the cards */
-  .kofi {
-    background-color: #13c3ff;
-  }
-  .patreon {
-    background-color: #f96854;
-  }
-  .paypal {
-    background-color: #0070ba;
-  }
+  .kofi { background-color: #13c3ff; }
+  .patreon { background-color: #f96854; }
+  .paypal { background-color: #0070ba; }
 
   .sponsor-card img {
-    margin-bottom: 1rem;
-    height: 40px;
+    height: 36px;
+    margin-bottom: 0; /* Remove margin as text is hidden */
   }
+  
+  /* Media query for tablets and desktops (screens wider than 768px) */
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem; /* Reset margin */
+      display: block; /* Show the title */
+    }
 
-  .sponsor-card span {
-    font-size: 1.25rem;
-    font-weight: 600;
+    /* Show the description again */
+    .sponsor-description {
+      display: block;
+      font-size: 1.125rem;
+      color: #9ca3af;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+
+    .sponsor-options {
+      gap: 1.5rem; /* Increase gap for larger layout */
+    }
+
+    /* Restore original card layout */
+    .sponsor-card {
+      flex-direction: column;
+      width: 180px;
+      height: auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .sponsor-card img {
+      height: 45px;
+      margin-bottom: 1rem;
+    }
+
+    /* Show the text inside cards again */
+    .sponsor-card span {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+    }
   }
 </style>
