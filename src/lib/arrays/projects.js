@@ -9,8 +9,7 @@ let projects = [
   },
   {
     name: "Anglobotik",
-    description:
-      "A Telegram bot that helps you mock an English writing exam.",
+    description: "A Telegram bot that helps you mock an English writing exam.",
     tech: ["python", "telegram", "openai"],
     link: "https://github.com/andrinoff/anglobotik",
     type: "backend",
@@ -45,7 +44,7 @@ let projects = [
       "A Wordle copy made for a technical interview, and finished afterwards.",
     tech: ["html5", "javascript", "css"],
     link: "https://wordle.andrinoff.com",
-    type: "fullstack",
+    type: "frontend",
   },
   {
     name: "Liquid Simulator",
@@ -63,11 +62,31 @@ let projects = [
   },
   {
     name: "Tesseract",
-    description:
-      "A 4D hypercube (tesseract) rendered in 3D space with WebGL.",
+    description: "A 4D hypercube (tesseract) rendered in 3D space with WebGL.",
     tech: ["javascript", "webgl"],
     link: "https://github.com/andrinoff/hypercube",
     type: "other",
   },
+  {
+    name: "Email CLI",
+    description: "Beatiful email client out of your terminal.",
+    tech: ["go", "gmail"],
+    link: "https://github.com/andrinoff/email-cli",
+    type: "fullstack",
+  },
+  {
+    name: "Floatpane",
+    description: "Beatiful, minimal wallpaper engine for MacOS and Windows.",
+    tech: ["javascript", "electron", "react"],
+    link: "https://github.com/floatpane",
+    type: "fullstack",
+  },
+  {
+    name: "Viral Post Generator",
+    description: "A tool for making the screenshots of popular posts.",
+    tech: ["javascript", "html5", "css"],
+    link: "https://github.com/andrinoff/viral-posts",
+    type: "frontend",
+  },
 ];
-export default projects
+export default projects;
