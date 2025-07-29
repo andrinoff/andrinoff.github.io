@@ -41,7 +41,7 @@
         class="sponsor-card paypal"
       >
         <img
-          src="https://www.edigitalagency.com.au/wp-content/uploads/PayPal-logo-white-png-vertical-900x838.png"
+          src="https://upload.wikimedia.org/wikipedia/commons/b/b7/PayPal_Logo_Icon_2014.svg"
           alt="PayPal Logo"
         />
         <span>Donate with PayPal</span>
@@ -119,7 +119,7 @@
 
   .kofi { background-color: #13c3ff; }
   .patreon { background-color: #f96854; }
-  .paypal { background-color: #0070ba; }
+  .paypal { background-color: #449eda; }
 
   .sponsor-card img {
     height: 36px;
