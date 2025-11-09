@@ -88,5 +88,19 @@ let projects = [
     link: "https://github.com/andrinoff/viral-posts",
     type: "frontend",
   },
+  {
+    name: "Docerium",
+    description: "A tool for easier teaching environment.",
+    tech: ["react", "tailwindcss"],
+    link: "https://docerium.com",
+    type: "frontend",
+  },
+  {
+    name: "Plazen",
+    description: "Calender featuring auto-planning.",
+    tech: ["react", "tailwindcss", "mysql", "prisma", "nextdotjs"],
+    link: "https://plazen.org",
+    type: "fullstack",
+  },
 ];
 export default projects;
