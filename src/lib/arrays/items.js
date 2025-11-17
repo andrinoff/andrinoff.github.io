@@ -11,6 +11,12 @@ const items = [
   { image: "react", name: "React" },
   { image: "javascript", name: "JS" },
   { image: "rust", name: "Rust" },
+  { image: "html5", name: "HTML" },
+  { image: "css", name: "CSS" },
+  { image: "docker", name: "Docker" },
+  { image: "typescript", name: "Typescript" },
+  { image: "vercel", name: "Vercel" },
+  { image: "github", name: "GitHub" },
 ];
 
 export default items;
