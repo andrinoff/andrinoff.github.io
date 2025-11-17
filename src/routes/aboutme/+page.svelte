@@ -10,7 +10,19 @@
             <h1 class="widget-title">~/experience</h1>
             <div class="timeline">
                 <!-- Experience Item 1 -->
-                <div class="timeline-item">
+                 <div class="timeline-item">
+                    <div class="timeline-connector">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <p class="job-title">Freelance</p>
+                        <p class="job-period">2022 - 2025</p>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 2 -->
+                 <div class="timeline-item">
                     <div class="timeline-connector">
                         <div class="timeline-dot"></div>
                         <div class="timeline-line"></div>
@@ -20,7 +32,8 @@
                         <p class="job-period">2023 - 2024</p>
                     </div>
                 </div>
-                <!-- Experience Item 2 -->
+                
+                <!-- Experience Item 3 -->
                 <div class="timeline-item">
                     <div class="timeline-connector">
                         <div class="timeline-dot"></div>
@@ -33,15 +46,15 @@
                         <p class="job-period">2024 - 2025</p>
                     </div>
                 </div>
-                <!-- Experience Item 3 -->
-                <div class="timeline-item">
+                <!-- Experience Item 4 -->
+                 <div class="timeline-item">
                     <div class="timeline-connector">
                         <div class="timeline-dot"></div>
                         <!-- No line on the last item -->
                     </div>
                     <div class="timeline-content">
-                        <p class="job-title">Freelance</p>
-                        <p class="job-period">2022 - Present</p>
+                        <p class="job-title">Fullstack Engineer</p>
+                        <p class="job-period">2025</p>
                     </div>
                 </div>
             </div>
@@ -147,7 +160,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 6px; /* Align dot with text */
+        margin-top: 1px; /* Align dot with text */
     }
     .timeline-dot {
         width: 16px;

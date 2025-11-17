@@ -13,4 +13,4 @@ const items = [
   { image: "rust", name: "Rust" },
 ];
 
-export default items
+export default items;
