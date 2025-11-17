@@ -34,7 +34,7 @@
         <span>Become a Patron</span>
       </a>
 
-      <a
+      <!-- <a
         href="https://paypal.me/andrinoff"
         target="_blank"
         rel="noopener noreferrer"
@@ -45,7 +45,7 @@
           alt="PayPal Logo"
         />
         <span>Donate with PayPal</span>
-      </a>
+      </a> -->
     </div>
   </div>
 </div>
@@ -119,7 +119,7 @@
 
   .kofi { background-color: #13c3ff; }
   .patreon { background-color: #f96854; }
-  .paypal { background-color: #449eda; }
+  /* .paypal { background-color: #449eda; } */
 
   .sponsor-card img {
     height: 36px;
