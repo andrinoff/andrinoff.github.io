@@ -9,11 +9,8 @@
 
     function getTbilisiTime() {
         const now = new Date();
-        const localTime = now.getTime();
-        const localOffset = now.getTimezoneOffset() * 60000;
-        const utc = localTime + localOffset;
-        // Corrected offset for Tbilisi (GMT+4)
-        const tbilisiOffset = 8 * 3600000;
+        const utc = now.getTime();
+        const tbilisiOffset = 4 * 3600000;
         const tbilisiTime = new Date(utc + tbilisiOffset);
         return tbilisiTime;
     }
