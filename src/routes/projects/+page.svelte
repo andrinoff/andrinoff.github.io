@@ -36,15 +36,15 @@
             image: "/projects/floatpane.png",
         },
         {
-            name: "Email CLI",
+            name: "Matcha 🍵",
             tagline: "Beautiful Terminal Email Client, written in Go",
             description:
-                "A beautiful email client that runs entirely in your terminal. Email CLI brings a modern, intuitive interface to managing your emails from the command line, with full Gmail integration and a clean aesthetic.",
+                "A beautiful email client that runs entirely in your terminal. Matcha brings a modern, intuitive interface to managing your emails from the command line, with a clean aesthetic.",
             tech: ["go", "gmail"],
-            link: "https://email-cli.andrinoff.com",
-            github: "https://github.com/andrinoff/email-cli",
+            link: "https://matcha.floatpane.com",
+            github: "https://github.com/floatpane/matcha",
             color: "#bf616a",
-            image: "/projects/email-cli.png",
+            image: "/projects/matcha.png",
         },
         {
             name: "Tesseract",
