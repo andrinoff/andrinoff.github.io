@@ -3,7 +3,7 @@
 <script>
     import { onMount, onDestroy } from "svelte";
     import items from "$lib/arrays/items.js";
-    const NUM_COLUMNS = 4;
+    const NUM_COLUMNS = 3;
     let columns = [];
 
     // Distribute and shuffle items into columns for a more random look
@@ -95,7 +95,7 @@
         display: flex;
         justify-content: center;
         gap: 1rem;
-        height: 300px; /* Adjusted height */
+        height: 465px; /* Adjusted height */
         width: 100%;
         position: relative;
         overflow: hidden;

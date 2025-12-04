@@ -153,7 +153,7 @@
         width: 100%;
         max-width: 900px;
         height: 80vh;
-        max-height: 400px;
+        max-height: 500px;
         background-color: rgba(46, 52, 64, 0.75);
         border: 1px solid #4c566a;
         border-radius: 8px;
