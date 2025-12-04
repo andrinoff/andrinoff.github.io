@@ -1,84 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Drew Smirnoff</title>
-    <meta
-      name="description"
-      content="Personal portfolio website of Drew Smirnoff, a software developer."
-    />
-    <meta
-      name="keywords"
-      content="drew smirnoff, andrinoff, portfolio, svelte, vite, hyprland, linux, software developer"
-    />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Drew Smirnoff</title>
+        <meta
+            name="description"
+            content="Personal portfolio website of Drew Smirnoff, a software developer."
+        />
+        <meta
+            name="keywords"
+            content="drew smirnoff, andrinoff, portfolio, svelte, vite, hyprland, linux, software developer"
+        />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://andrinoff.com/" />
-    <meta property="og:title" content="Drew Smirnoff - Portfolio" />
-    <meta
-      property="og:description"
-      content="Personal portfolio website of Drew Smirnoff, a software developer."
-    />
-    <meta
-      property="og:image"
-      content="https://avatars.githubusercontent.com/u/175145001?v=4"
-    />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://andrinoff.com/" />
+        <meta property="og:title" content="Drew Smirnoff - Portfolio" />
+        <meta
+            property="og:description"
+            content="Personal portfolio website of Drew Smirnoff, a software developer."
+        />
+        <meta property="og:image" content="/avatar.png" />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://andrinoff.com/" />
-    <meta property="twitter:title" content="Drew Smirnoff - Portfolio" />
-    <meta
-      property="twitter:description"
-      content="Personal portfolio website of Drew Smirnoff, a software developer."
-    />
-    <meta
-      property="twitter:image"
-      content="https://avatars.githubusercontent.com/u/175145001?v=4"
-    />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://andrinoff.com/" />
+        <meta property="twitter:title" content="Drew Smirnoff - Portfolio" />
+        <meta
+            property="twitter:description"
+            content="Personal portfolio website of Drew Smirnoff, a software developer."
+        />
+        <meta property="twitter:image" content="/avatar.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="https://avatars.githubusercontent.com/u/175145001?v=4"
-    />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/svg+xml" href="/avatar.png" />
 
-    %sveltekit.head%
-  </head>
-  <body data-sveltekit-preload-data="hover">
-    <a rel="me" href="https://fosstodon.org/@andrinoff" style="display: none"
-      >Mastodon</a
-    >
-    <div id="root">%sveltekit.body%</div>
-    <style>
-      :root {
-        background-color: #14191f;
-        color: white;
-      }
+        %sveltekit.head%
+    </head>
+    <body data-sveltekit-preload-data="hover">
+        <a
+            rel="me"
+            href="https://fosstodon.org/@andrinoff"
+            style="display: none"
+            >Mastodon</a
+        >
+        <div id="root">%sveltekit.body%</div>
+        <style>
+            :root {
+                background-color: #14191f;
+                color: white;
+            }
 
-      * {
-        font-family: "Funnel Display", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 300;
-        font-style: normal;
-      }
+            * {
+                font-family: "Funnel Display", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 300;
+                font-style: normal;
+            }
 
-      #root {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-      }
+            #root {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+            }
 
-      #content {
-        flex: 1;
-      }
-    </style>
-  </body>
+            #content {
+                flex: 1;
+            }
+        </style>
+    </body>
 </html>

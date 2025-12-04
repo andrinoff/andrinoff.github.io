@@ -9,7 +9,7 @@
     <div class="widget-card hero-card">
         <section class="profile-section">
             <img
-                src="https://avatars.githubusercontent.com/u/175145001?v=4"
+                src="/avatar.png"
                 alt="Drew Smirnoff's Avatar"
                 class="avatar"
             />
