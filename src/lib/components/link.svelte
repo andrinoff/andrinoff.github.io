@@ -26,7 +26,7 @@
     }
 
     .link:hover {
-        background-color: #333;
+        background-color: #21262d;
     }
 
     .link img {

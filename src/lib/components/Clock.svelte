@@ -51,7 +51,7 @@
        This makes it a reusable "widget". */
     .clock-container {
         text-align: center;
-        color: #eceff4; /* Brighter text for the clock time */
+        color: #e6edf3; /* Brighter text for the clock time */
         width: 100%;
     }
 
@@ -64,7 +64,7 @@
         font-size: 3.5rem;
         font-weight: 700;
         line-height: 1;
-        color: #eceff4;
+        color: #e6edf3;
     }
 
     .time-part {

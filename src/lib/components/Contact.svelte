@@ -6,9 +6,18 @@
     let responseMessage = "";
 
     async function handleSubmit() {
-        status = "sending";
-        responseMessage = "Sending...";
+        // Immediately show success and clear form (fire-and-forget)
+        const submittedData = { name, email, content };
 
+        status = "success";
+        responseMessage = "Thank you for your message! ❤️";
+
+        // Clear the form immediately
+        name = "";
+        email = "";
+        content = "";
+
+        // Send request in background, only show error if it fails
         try {
             const response = await fetch(
                 "https://emails.andrinoff.com/api/andrinoff",
@@ -17,27 +26,22 @@
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ name, email, content }),
+                    body: JSON.stringify(submittedData),
                 },
             );
 
             if (!response.ok) {
                 throw new Error(`Server responded with ${response.status}`);
             }
-
-            await response.json();
-
-            status = "success";
-            responseMessage = "Message sent successfully! ✨";
-
-            // Clear the form
-            name = "";
-            email = "";
-            content = "";
         } catch (error) {
             console.error("Failed to send message:", error);
             status = "error";
             responseMessage = "Something went wrong. Please try again.";
+
+            // Restore form data so user doesn't lose their message
+            name = submittedData.name;
+            email = submittedData.email;
+            content = submittedData.content;
         }
     }
 </script>
@@ -52,7 +56,6 @@
                 id="name"
                 required
                 bind:value={name}
-                disabled={status === "sending"}
                 placeholder="your_name"
             />
         </div>
@@ -63,7 +66,6 @@
                 id="email"
                 required
                 bind:value={email}
-                disabled={status === "sending"}
                 placeholder="you@domain.com"
             />
         </div>
@@ -74,24 +76,13 @@
                 rows="5"
                 required
                 bind:value={content}
-                disabled={status === "sending"}
                 placeholder="Your message here..."
             ></textarea>
         </div>
 
-        <button
-            type="submit"
-            class="submit-btn"
-            disabled={status === "sending"}
-        >
-            {#if status === "sending"}
-                [ sending... ]
-            {:else}
-                [ submit ]
-            {/if}
-        </button>
+        <button type="submit" class="submit-btn"> [ submit ] </button>
 
-        {#if responseMessage && status !== "sending"}
+        {#if responseMessage}
             <p class="response-message {status}">{responseMessage}</p>
         {/if}
     </form>
@@ -110,7 +101,7 @@
         margin-top: 0;
         margin-bottom: 1.5rem;
         padding-bottom: 0.75rem;
-        border-bottom: 1px solid #4c566a;
+        border-bottom: 1px solid #30363d;
     }
     /* Add a little shell prompt character to the title */
     .widget-title::before {
@@ -139,9 +130,9 @@
 
     input,
     textarea {
-        background-color: #2e3440;
+        background-color: #161b22;
         color: #d8dee9;
-        border: 1px solid #4c566a;
+        border: 1px solid #30363d;
         border-radius: 6px;
         padding: 0.75rem 1rem;
         font-size: 1rem;
@@ -153,7 +144,7 @@
 
     input::placeholder,
     textarea::placeholder {
-        color: #4c566a;
+        color: #484f58;
         opacity: 1;
     }
 
@@ -171,29 +162,22 @@
 
     .submit-btn {
         font-family: inherit;
-        background-color: #81a1c1;
-        color: #2e3440;
+        background-color: #88c0d0;
+        color: #0d1117;
         font-weight: 700;
         font-size: 1rem;
         text-transform: lowercase;
         padding: 0.75rem;
-        border: 1px solid #434c5e;
+        border: 1px solid #88c0d0;
         border-radius: 6px;
         cursor: pointer;
         transition: all 0.2s ease;
         margin-top: 0.5rem;
     }
 
-    .submit-btn:hover:not(:disabled) {
-        background-color: #88c0d0;
-        border-color: #88c0d0;
-        color: #2e3440;
-    }
-
-    .submit-btn:disabled {
-        background-color: #434c5e;
-        opacity: 0.6;
-        cursor: not-allowed;
+    .submit-btn:hover {
+        background-color: #8fbcbb;
+        border-color: #8fbcbb;
     }
 
     .response-message {

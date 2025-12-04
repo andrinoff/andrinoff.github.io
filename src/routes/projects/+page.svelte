@@ -41,7 +41,7 @@
             description:
                 "A beautiful email client that runs entirely in your terminal. Email CLI brings a modern, intuitive interface to managing your emails from the command line, with full Gmail integration and a clean aesthetic.",
             tech: ["go", "gmail"],
-            link: "https://github.com/andrinoff/email-cli",
+            link: "https://email-cli.andrinoff.com",
             github: "https://github.com/andrinoff/email-cli",
             color: "#bf616a",
             image: "/projects/email-cli.png",
@@ -277,7 +277,7 @@
         color: #88c0d0;
         margin: 0 0 2rem 0;
         padding-bottom: 0.75rem;
-        border-bottom: 1px solid #4c566a;
+        border-bottom: 1px solid #30363d;
     }
 
     .widget-title::before {
@@ -294,8 +294,8 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(46, 52, 64, 0.8);
-        border: 1px solid #4c566a;
+        background: rgba(22, 27, 34, 0.9);
+        border: 1px solid #30363d;
         border-radius: 50%;
         width: 48px;
         height: 48px;
@@ -323,7 +323,7 @@
     .carousel-nav:hover {
         background-color: rgba(136, 192, 208, 0.9);
         border-color: #88c0d0;
-        color: #2e3440;
+        color: #0d1117;
         transform: translateY(-50%) scale(1.1);
     }
 
@@ -371,8 +371,8 @@
         height: 25%;
         background: linear-gradient(
             to top,
-            rgba(46, 52, 64, 0.95) 0%,
-            rgba(46, 52, 64, 0.8) 60%,
+            rgba(13, 17, 23, 0.95) 0%,
+            rgba(22, 27, 34, 0.85) 60%,
             transparent 100%
         );
         display: flex;
@@ -444,7 +444,7 @@
 
     .project-link:hover {
         background-color: #88c0d0;
-        color: #2e3440;
+        color: #0d1117;
         transform: scale(1.1);
     }
 
@@ -535,7 +535,7 @@
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        border: 2px solid #4c566a;
+        border: 2px solid #30363d;
         background-color: transparent;
         cursor: pointer;
         transition:
@@ -559,7 +559,7 @@
         top: 2.5rem;
         right: 2.5rem;
         font-size: 0.9rem;
-        color: #4c566a;
+        color: #484f58;
     }
 
     .project-counter .current {
@@ -622,8 +622,8 @@
         flex-direction: column;
         gap: 0.75rem;
         padding: 1.25rem;
-        background-color: rgba(59, 66, 82, 0.4);
-        border: 1px solid #4c566a;
+        background-color: rgba(22, 27, 34, 0.6);
+        border: 1px solid #30363d;
         border-radius: 8px;
         text-decoration: none;
         transition:
@@ -633,7 +633,7 @@
     }
 
     .other-project-card:hover {
-        background-color: rgba(136, 192, 208, 0.1);
+        background-color: rgba(136, 192, 208, 0.08);
         border-color: #88c0d0;
         transform: translateY(-4px);
     }

@@ -154,8 +154,8 @@
         max-width: 900px;
         height: 80vh;
         max-height: 500px;
-        background-color: rgba(46, 52, 64, 0.75);
-        border: 1px solid #4c566a;
+        background-color: rgba(22, 27, 34, 0.85);
+        border: 1px solid #30363d;
         border-radius: 8px;
         padding: 2.5rem;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -172,7 +172,7 @@
         color: #88c0d0;
         margin: 0 0 1.5rem 0;
         padding-bottom: 0.75rem;
-        border-bottom: 1px solid #4c566a;
+        border-bottom: 1px solid #30363d;
         flex-shrink: 0;
     }
 
@@ -224,7 +224,7 @@
 
     /* Individual appreciation item styles */
     .appreciation-item {
-        border-left: 2px solid #4c566a;
+        border-left: 2px solid #30363d;
         padding-left: 1.5rem;
         transition: border-left-color 0.3s ease;
     }

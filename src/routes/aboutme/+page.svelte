@@ -310,7 +310,7 @@
         color: #88c0d0;
         margin: 0 0 1.5rem 0;
         padding-bottom: 0.75rem;
-        border-bottom: 1px solid #4c566a;
+        border-bottom: 1px solid #30363d;
     }
 
     .widget-title::before {
@@ -345,7 +345,7 @@
     .education-icon svg {
         width: 28px;
         height: 28px;
-        color: #2e3440;
+        color: #0d1117;
     }
 
     .education-info {
@@ -387,7 +387,7 @@
 
     .progress-bar {
         height: 8px;
-        background-color: #3b4252;
+        background-color: #21262d;
         border-radius: 4px;
         overflow: hidden;
     }
@@ -424,7 +424,7 @@
         gap: 0.4rem;
         padding: 0.4rem 0.75rem;
         background-color: rgba(136, 192, 208, 0.1);
-        border: 1px solid #4c566a;
+        border: 1px solid #30363d;
         border-radius: 20px;
         font-size: 0.85rem;
         color: #d8dee9;
@@ -468,7 +468,7 @@
         background-color: #88c0d0;
         border-radius: 50%;
         flex-shrink: 0;
-        border: 2px solid #2e3440;
+        border: 2px solid #0d1117;
         transition:
             background-color 0.3s ease,
             transform 0.3s ease;
@@ -480,7 +480,7 @@
     }
     .timeline-line {
         width: 2px;
-        background-color: #4c566a;
+        background-color: #30363d;
         flex-grow: 1;
     }
 
@@ -502,8 +502,8 @@
             border-color 0.3s ease;
     }
     .timeline-content:hover {
-        background-color: rgba(136, 192, 208, 0.1);
-        border-color: #4c566a;
+        background-color: rgba(136, 192, 208, 0.08);
+        border-color: #30363d;
     }
     .timeline-item.expanded .timeline-content {
         background-color: rgba(136, 192, 208, 0.15);
@@ -543,8 +543,8 @@
     .job-details {
         margin-top: 1rem;
         padding: 1rem;
-        background-color: rgba(46, 52, 64, 0.8);
-        border: 1px solid #4c566a;
+        background-color: rgba(22, 27, 34, 0.9);
+        border: 1px solid #30363d;
         border-radius: 8px;
         animation: slideDown 0.3s ease-out;
     }
@@ -608,8 +608,8 @@
             transform 0.2s ease;
     }
     .social-link:hover {
-        background-color: rgba(136, 192, 208, 0.15);
-        border-color: #4c566a;
+        background-color: rgba(136, 192, 208, 0.1);
+        border-color: #30363d;
         color: #88c0d0;
         transform: translateY(-2px);
     }

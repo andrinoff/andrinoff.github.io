@@ -1,42 +1,46 @@
 @import "tailwindcss";
 
 .widget-card {
-  width: 100%;
-  background-color: rgba(46, 52, 64, 0.75); /* Semi-transparent background */
-  border: 1px solid #4c566a;
-  border-radius: 8px;
-  padding: 2.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  animation: floatIn 0.8s ease-out;
-  box-sizing: border-box; /* Ensures padding doesn't break layout */
-  transition: transform 0.5s ease;
+    width: 100%;
+    background-color: rgba(
+        22,
+        27,
+        34,
+        0.85
+    ); /* Darker semi-transparent background */
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    animation: floatIn 0.8s ease-out;
+    box-sizing: border-box; /* Ensures padding doesn't break layout */
+    transition: transform 0.5s ease;
 }
 
 .widget-card:hover {
-  transform: scale(1.02);
+    transform: scale(1.02);
 }
 
 @keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .main-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem; /* Gap between stacked windows */
-  overflow: hidden; /* Prevent scaled children from overflowing */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Gap between stacked windows */
 }
 
 .hero-card {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  overflow: hidden; /* Prevent scaled children from overflowing */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: hidden; /* Prevent scaled children from overflowing */
 }

@@ -232,8 +232,8 @@
         width: 80%;
         max-width: 300px;
         height: 100%;
-        background-color: #161b22;
-        border-left: 1px solid #30363d;
+        background-color: #0d1117;
+        border-left: 1px solid #21262d;
         z-index: 1000;
         padding: 6rem 2rem 2rem;
         display: flex;

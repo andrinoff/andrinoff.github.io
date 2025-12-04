@@ -83,7 +83,7 @@
         color: #88c0d0;
         margin: 0 0 1.5rem 0;
         padding-bottom: 0.75rem;
-        border-bottom: 1px solid #4c566a;
+        border-bottom: 1px solid #30363d;
     }
 
     .widget-title::before {
@@ -140,7 +140,7 @@
         height: 80px;
         width: 100%; /* Take full width of the column */
         background-color: transparent; /* Match the widget background */
-        border: 1px solid #434c5e;
+        border: 1px solid #30363d;
         border-radius: 8px;
         margin-bottom: 1rem;
         transition:
