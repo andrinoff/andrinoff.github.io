@@ -1,69 +1,54 @@
 <script>
     import Clock from "$lib/components/Clock.svelte";
-    import ContactForm from "$lib/components/Contact.svelte";
     import Sponsor from "$lib/components/Sponsor.svelte";
+    import GitHubCommits from "$lib/components/GitHubCommits.svelte";
+    import MastodonPost from "$lib/components/MastodonPost.svelte";
 </script>
 
 <div class="home-page-container">
-    <!-- "Master" Pane - The main profile widget -->
-    <div class="widget-card hero-card">
-        <section class="profile-section">
-            <img
-                src="/avatar.png"
-                alt="Drew Smirnoff's Avatar"
-                class="avatar"
-            />
-            <div class="profile-text">
-                <h1 class="name-heading">Drew Smirnoff</h1>
-                <p class="bio">
-                    Software Engineer <span class="divider">|</span> Based in Tbilisi
-                </p>
-            </div>
-        </section>
+    <!-- Left Column -->
+    <div class="left-column">
+        <!-- "Master" Pane - The main profile widget -->
+        <div class="widget-card hero-card">
+            <section class="profile-section">
+                <img
+                    src="/avatar.png"
+                    alt="Drew Smirnoff's Avatar"
+                    class="avatar"
+                />
+                <div class="profile-text">
+                    <h1 class="name-heading">Drew Smirnoff</h1>
+                    <p class="bio">Software Engineer</p>
+                </div>
+            </section>
 
-        <hr class="card-divider" />
+            <hr class="card-divider" />
 
-        <section class="dashboard-section">
-            <div class="clock-widget">
-                <Clock />
-            </div>
-            <hr class="card-divider mt-10" />
-        </section>
-        <div class="">
-            <!-- Contact Form Section -->
-            <ContactForm />
+            <section class="dashboard-section">
+                <div class="clock-widget">
+                    <Clock />
+                </div>
+            </section>
         </div>
+
+        <!-- GitHub Commits Section -->
+        <section class="widget-card commits-section">
+            <h2 class="widget-title">~/github/commits</h2>
+            <GitHubCommits />
+        </section>
     </div>
 
-    <!-- "Stack" Pane - A column for other widgets -->
-    <div class="main-stack">
+    <!-- Right Column -->
+    <div class="right-column">
+        <!-- Mastodon Post Section -->
+        <section class="widget-card mastodon-section">
+            <h2 class="widget-title">~/mastodon/latest</h2>
+            <MastodonPost />
+        </section>
+
         <section class="widget-card sponsor-section">
             <h2 class="widget-title">~/sponsor</h2>
             <Sponsor />
-        </section>
-
-        <!-- Social Links Section -->
-
-        <!-- Biography Section -->
-        <section class="widget-card biography-section">
-            <h2 class="widget-title">~/biography.md</h2>
-            <div class="biography-content">
-                <p>
-                    Hello, everyone! My journey into technology began at the
-                    young age of 6, sparked by an interest in robotics and
-                    simple programs. With my father also being a programmer, I
-                    was fortunate to always have guidance when I needed it.
-                </p>
-                <p>
-                    By 5th grade, my curiosity led me to web development. From
-                    6th to 10th grade, I progressively dove deeper into backend
-                    development, building over a hundred websites in the
-                    process. Beyond the world of code, I'm passionate about
-                    music and sports. I often perform as a lead guitarist in
-                    rock and metal bands, and occasionally, I take the stage as
-                    a vocalist.
-                </p>
-            </div>
         </section>
     </div>
 </div>
@@ -93,24 +78,36 @@
     /* Hyprland-style Tiling Layout Container */
     .home-page-container {
         display: grid;
-        grid-template-columns: 1.5fr 1.5fr; /* Master and stack layout */
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); /* Left column slightly smaller */
         align-items: start;
-        gap: 2rem; /* The "gap" between tiled windows */
+        gap: 2.5rem; /* The "gap" between tiled windows */
         width: 100%;
-        max-width: 1400px;
+        max-width: 1200px;
         margin: 40px auto 0;
     }
 
-    .main-stack {
+    .left-column {
         display: flex;
         flex-direction: column;
-        gap: 2rem; /* Gap between stacked windows */
+        gap: 1.5rem;
+        min-width: 0;
+    }
+
+    .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        min-width: 0;
     }
 
     .hero-card {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .commits-section {
+        overflow: hidden;
     }
 
     .profile-section {
@@ -167,12 +164,11 @@
     .clock-widget {
         padding: 1rem;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        align-items: left;
     }
 
-    /* Biography, Nav, Social & Contact Section Styles */
-    .biography-section,
+    /* Nav, Social & Contact Section Styles */
     .nav-widget,
     .social-widget,
     :global(.contact-section) {
@@ -189,24 +185,13 @@
         margin-bottom: 1.5rem;
         padding-bottom: 0.75rem;
         border-bottom: 1px solid #30363d;
+        width: 100%;
+        display: block;
     }
     /* Add a little shell prompt character to the title */
     .widget-title::before {
         content: "$ ";
         color: #a3be8c; /* Green for prompt */
-    }
-
-    .biography-content {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: #d8dee9;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .biography-content p {
-        margin: 0;
     }
 
     /* Navigation Widget Styles */
@@ -249,8 +234,8 @@
     .sponsor-section {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Horizontally center the content */
-        justify-content: center; /* Vertically center the content */
+        align-items: stretch; /* Allow title to be full-width */
+        justify-content: flex-start;
     }
     :global(.sponsor-section a) {
         display: block;

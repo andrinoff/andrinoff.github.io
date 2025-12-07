@@ -64,6 +64,12 @@
             />
             <Link
                 on:click={closeMenu}
+                link="/contact"
+                text="Contact"
+                logo="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23e3e3e3'%3E%3Cpath d='M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z'/%3E%3C/svg%3E"
+            />
+            <Link
+                on:click={closeMenu}
                 link="https://github.com/andrinoff"
                 text="Github"
                 logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/f202b6faccfd5cc46299b976c2635fee60b55aa0_github-mark-white.svg"
@@ -113,6 +119,12 @@
             />
             <Link
                 on:click={closeMenu}
+                link="/contact"
+                text="Contact"
+                logo="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23e3e3e3'%3E%3Cpath d='M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z'/%3E%3C/svg%3E"
+            />
+            <Link
+                on:click={closeMenu}
                 link="https://github.com/andrinoff"
                 text="Github"
                 logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/f202b6faccfd5cc46299b976c2635fee60b55aa0_github-mark-white.svg"
@@ -150,14 +162,14 @@
         width: 100%;
         padding: 1rem 2rem;
         position: relative;
-        /* Removed solid background to allow backdrop-filter to work */
+        gap: 1rem;
     }
 
     .desktop-nav {
         display: none;
         justify-content: space-evenly;
         width: 100%;
-        max-width: 600px;
+        max-width: 700px;
     }
 
     .hamburger-btn {

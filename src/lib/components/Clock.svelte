@@ -43,7 +43,7 @@
         <span class="separator">:</span>
         <span class="time-part">{seconds}</span>
     </div>
-    <div class="date-display">Tbilisi, Georgia</div>
+    <div class="date-display">Tbilisi, Georgia 🇬🇪</div>
 </div>
 
 <style>

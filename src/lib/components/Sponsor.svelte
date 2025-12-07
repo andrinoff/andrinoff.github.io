@@ -2,9 +2,9 @@
     <div class="content-wrapper">
         <h1 id="support">Support My Work</h1>
         <p class="sponsor-description">
-            If you enjoy my code and find it valuable, please consider
-            supporting me. Your contribution helps me dedicate more time to
-            creating and sharing. Thank you for your generosity!
+            &ThickSpace; If you enjoy my code and find it valuable, please
+            consider supporting me. Your contribution helps me dedicate more
+            time to creating and sharing. Thank you for your generosity!
         </p>
 
         <div class="sponsor-options">
@@ -56,11 +56,11 @@
         text-align: center;
         font-family: inherit;
         color: #d8dee9;
-        padding: 1rem;
+        padding: 0;
+        width: 100%;
     }
 
     .content-wrapper {
-        max-width: 800px;
         width: 100%;
         display: flex;
         flex-direction: column;
