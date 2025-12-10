@@ -54,17 +54,14 @@
             for (const event of pushEvents) {
                 if (allCommits.length >= 3) break;
 
-                const repoFullName = event.repo.name;
-                const repoName = repoFullName.split("/").pop() || repoFullName;
+                const repoName = event.repo.name;
+
                 const headSha = event.payload.head;
 
                 if (seenShas.has(headSha)) continue;
                 seenShas.add(headSha);
 
-                const commitData = await fetchCommitDetails(
-                    repoFullName,
-                    headSha,
-                );
+                const commitData = await fetchCommitDetails(repoName, headSha);
 
                 if (commitData) {
                     allCommits.push({
