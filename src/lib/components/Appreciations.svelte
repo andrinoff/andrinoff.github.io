@@ -148,12 +148,11 @@
 </main>
 
 <style>
-    /* Main container styled as a "widget" */
     .widget-card {
         width: 100%;
         max-width: 900px;
         height: 80vh;
-        max-height: 500px;
+        max-height: 300px;
         background-color: rgba(22, 27, 34, 0.85);
         border: 1px solid #30363d;
         border-radius: 8px;

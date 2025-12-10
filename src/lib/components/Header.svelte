@@ -1,38 +1,86 @@
 <script>
     import Link from "./link.svelte";
     import { browser } from "$app/environment";
+    import { onMount, onDestroy } from "svelte";
 
-    // State to control the visibility of the mobile menu
+    const Mail = () => {
+        return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>`;
+    };
+
     let isMenuOpen = false;
-    // State to track scroll position
     let scrolled = false;
 
-    // Function to toggle the menu state
+    // Time string (Tbilisi / Georgia)
+    let time = "";
+
+    // timer handles for syncing to minute boundary
+    let minuteTimeout;
+    let minuteInterval;
+
+    function formatTbilisi(d = new Date()) {
+        try {
+            return new Intl.DateTimeFormat([], {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+                timeZone: "Asia/Tbilisi",
+            }).format(d);
+        } catch (e) {
+            // fallback if timezone unsupported
+            return d.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+            });
+        }
+    }
+
+    function updateTime() {
+        time = formatTbilisi(new Date());
+    }
+
+    onMount(() => {
+        if (!browser) return;
+
+        // show immediately
+        updateTime();
+
+        // compute ms until next minute boundary
+        const now = new Date();
+        const msUntilNextMinute =
+            (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
+
+        // schedule first tick at the minute boundary, then every 60s
+        minuteTimeout = setTimeout(() => {
+            updateTime();
+            minuteInterval = setInterval(updateTime, 60_000);
+        }, msUntilNextMinute);
+
+        // Safety: if msUntilNextMinute is 0 (exact boundary), start interval immediately
+        if (msUntilNextMinute === 0) {
+            minuteInterval = setInterval(updateTime, 60_000);
+        }
+    });
+
+    onDestroy(() => {
+        if (minuteTimeout) clearTimeout(minuteTimeout);
+        if (minuteInterval) clearInterval(minuteInterval);
+    });
+
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
     }
 
-    // Function to close the menu, useful for when a link is clicked
     function closeMenu() {
         isMenuOpen = false;
     }
 
-    // This reactive statement adds/removes a 'no-scroll' class to the body
-    // when the menu opens/closes. This is a robust way to prevent the page
-    // from scrolling when the mobile menu is active.
     $: if (browser) {
-        if (isMenuOpen) {
-            document.body.classList.add("no-scroll");
-        } else {
-            document.body.classList.remove("no-scroll");
-        }
+        if (isMenuOpen) document.body.classList.add("no-scroll");
+        else document.body.classList.remove("no-scroll");
     }
 
-    // A11Y Fix: Function to handle keyboard events for accessibility.
-    function handleKeydown(event) {
-        if (event.key === "Escape") {
-            closeMenu();
-        }
+    function handleKeydown(e) {
+        if (e.key === "Escape") closeMenu();
     }
 </script>
 
@@ -43,7 +91,7 @@
 
 <header class="main-header" class:scrolled>
     <div class="header-container">
-        <nav class="desktop-nav">
+        <nav class="desktop-nav" aria-label="Primary">
             <Link
                 on:click={closeMenu}
                 link="/"
@@ -66,7 +114,7 @@
                 on:click={closeMenu}
                 link="/contact"
                 text="Contact"
-                logo="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23e3e3e3'%3E%3Cpath d='M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z'/%3E%3C/svg%3E"
+                logo="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23c9d1d9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7'/><rect x='2' y='4' width='20' height='16' rx='2'/></svg>"
             />
             <Link
                 on:click={closeMenu}
@@ -75,6 +123,47 @@
                 logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/f202b6faccfd5cc46299b976c2635fee60b55aa0_github-mark-white.svg"
             />
         </nav>
+
+        <!-- Tbilisi time (HH:MM, 24h) then Georgia flag to the right -->
+        <div
+            class="header-time"
+            aria-hidden="true"
+            title="Tbilisi time (Asia/Tbilisi)"
+        >
+            <span class="header-time-text">{time}</span>
+            <span class="header-flag" aria-hidden="true" title="Georgia flag">
+                <!-- Georgia flag (SVG) - decorative -->
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="14"
+                    viewBox="0 0 60 40"
+                    role="img"
+                    focusable="false"
+                    aria-hidden="true"
+                >
+                    <rect width="60" height="40" fill="#ffffff" />
+                    <g fill="#d90000">
+                        <!-- central cross -->
+                        <rect x="26" y="0" width="8" height="40" />
+                        <rect x="0" y="16" width="60" height="8" />
+                        <!-- four Bolnuri crosses (stylised) -->
+                        <g transform="translate(6,5) scale(0.9)">
+                            <path d="M5 0h2v2h2v2H7v2H5v-2H3V2h2z" />
+                        </g>
+                        <g transform="translate(46,5) scale(0.9)">
+                            <path d="M5 0h2v2h2v2H7v2H5v-2H3V2h2z" />
+                        </g>
+                        <g transform="translate(6,27) scale(0.9)">
+                            <path d="M5 0h2v2h2v2H7v2H5v-2H3V2h2z" />
+                        </g>
+                        <g transform="translate(46,27) scale(0.9)">
+                            <path d="M5 0h2v2h2v2H7v2H5v-2H3V2h2z" />
+                        </g>
+                    </g>
+                </svg>
+            </span>
+        </div>
 
         <button
             class="hamburger-btn"
@@ -98,7 +187,11 @@
         tabindex="-1"
         on:keydown={(e) => e.key === "Enter" && closeMenu()}
     >
-        <nav class="mobile-nav" on:click|stopPropagation>
+        <nav
+            class="mobile-nav"
+            on:click|stopPropagation
+            aria-label="Mobile Primary"
+        >
             <Link
                 on:click={closeMenu}
                 link="/"
@@ -121,7 +214,7 @@
                 on:click={closeMenu}
                 link="/contact"
                 text="Contact"
-                logo="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23e3e3e3'%3E%3Cpath d='M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z'/%3E%3C/svg%3E"
+                logo="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23c9d1d9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7'/><rect x='2' y='4' width='20' height='16' rx='2'/></svg>"
             />
             <Link
                 on:click={closeMenu}
@@ -134,7 +227,6 @@
 </header>
 
 <style>
-    /* Prevents the page from scrolling when the mobile menu is open */
     :global(body.no-scroll) {
         overflow: hidden;
     }
@@ -146,11 +238,10 @@
         background-color: transparent;
         border-bottom: 1px solid transparent;
         transition:
-            background-color 0.3s ease,
-            border-color 0.3s ease,
-            backdrop-filter 0.3s ease;
+            background-color 0.28s ease,
+            border-color 0.28s ease,
+            backdrop-filter 0.28s ease;
     }
-
     .main-header.scrolled {
         background-color: rgba(13, 17, 23, 0.75);
     }
@@ -182,7 +273,7 @@
         background: none;
         border: none;
         cursor: pointer;
-        padding: 10px;
+        padding: 8px;
     }
 
     .hamburger-icon {
@@ -192,7 +283,6 @@
         width: 24px;
         height: 18px;
     }
-
     .line {
         display: block;
         width: 100%;
@@ -200,10 +290,9 @@
         background-color: #c9d1d9;
         border-radius: 2px;
         transition:
-            transform 0.3s ease-in-out,
-            opacity 0.3s ease-in-out;
+            transform 0.28s ease,
+            opacity 0.28s ease;
     }
-
     .hamburger-icon.is-open .line-1 {
         transform: translateY(8px) rotate(45deg);
     }
@@ -227,9 +316,8 @@
         visibility: hidden;
         pointer-events: none;
         transition:
-            opacity 0.3s ease,
-            visibility 0.3s ease,
-            background-color 0.3s ease;
+            opacity 0.28s ease,
+            visibility 0.28s ease;
     }
     .mobile-nav-overlay.is-open {
         opacity: 1;
@@ -251,29 +339,71 @@
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
-        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: right 0.36s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-
     .mobile-nav-overlay.is-open .mobile-nav {
         right: 0;
     }
 
-    @media screen and (min-width: 800px) {
+    @media (min-width: 800px) {
         .header-container {
             justify-content: center;
         }
-
         .desktop-nav {
             display: flex;
         }
         .hamburger-btn {
             display: none;
         }
+
+        /* time positioned on the right; time text first, flag to the right */
+        .header-time {
+            position: absolute;
+            right: 2.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #c9d1d9;
+            font-family: monospace;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .header-time-text {
+            font-variant-numeric: tabular-nums;
+        }
+        .header-flag svg {
+            display: block;
+            border-radius: 2px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) inset;
+        }
     }
 
-    @media screen and (max-width: 799px) {
+    @media (max-width: 799px) {
         .header-container {
-            justify-content: flex-end;
+            justify-content: center;
+        }
+
+        .header-time {
+            position: absolute;
+            left: 50%;
+            right: auto;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #c9d1d9;
+            font-family: monospace;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .header-flag svg {
+            width: 18px;
+            height: 12px;
+        }
+        .header-time-text {
+            font-variant-numeric: tabular-nums;
         }
     }
 </style>
