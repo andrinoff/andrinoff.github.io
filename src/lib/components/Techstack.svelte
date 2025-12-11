@@ -12,7 +12,7 @@
             url: "https://reactjs.org/",
         },
         {
-            name: "Next.js",
+            name: "Nextjs",
             id: "nextdotjs",
             url: "https://nextjs.org/",
         },
